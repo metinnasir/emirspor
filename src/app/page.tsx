@@ -61,9 +61,9 @@ export default function Home() {
 
       <section id="urunler" className="products-section">
         <div className="section-heading">
-          <p className="kicker orange">KOLEKSİYON</p>
-          <h2>SAHAYA YENİ ÇIKANLAR</h2>
-          <p>Takım renklerinize, logonuza ve hikâyenize göre yeniden tasarlanabilen örnek forma çizgileri.</p>
+          <p className="kicker orange">26/27 SEZON</p>
+          <h2>YENİ SEZON FORMA MODELLERİ</h2>
+          <p>En çok tercih edilen halı saha forma modelleri.</p>
         </div>
         <div className="product-grid container-wide">
           {products.map((product, index) => <article className="product" key={product.name}>
