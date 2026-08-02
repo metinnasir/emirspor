@@ -1,5 +1,6 @@
 import Script from "next/script";
 import Image from "next/image";
+import Link from "next/link";
 
 const products = [
   { name: "Gece Mavisi", type: "Profesyonel maç forması", tone: "navy" },
@@ -35,9 +36,18 @@ export default function Home() {
         </div>
       </div>
       <div className="header-nav container-wide">
-        <a className="design-trigger" href="https://wa.me/905444407767?text=Merhaba%2C%20tak%C4%B1m%C4%B1ma%20%C3%B6zel%20forma%20tasarlamak%20istiyorum" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp üzerinden forma tasarla">
-          <span className="menu-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>FORMA TASARLA</strong>
-        </a>
+        <details className="design-menu">
+          <summary className="design-trigger"><span className="menu-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>FORMA TASARLA</strong></summary>
+          <div className="design-dropdown">
+            <Link href="/forma-tasarla/futbol-formasi-tasarla">Futbol Forması Tasarla</Link>
+            <Link href="/forma-tasarla/basketbol-formasi-tasarla">Basketbol Forması Tasarla</Link>
+            <Link href="/forma-tasarla/voleybol-formasi-tasarla">Voleybol Forması Tasarla</Link>
+            <Link href="/forma-tasarla/takim-formasi-tasarla">Takım Forması Tasarla</Link>
+            <Link href="/forma-tasarla/hali-saha-formasi-tasarla">Halı Saha Forması Tasarla</Link>
+            <Link href="/forma-tasarla/ucuz-forma-tasarla">Ucuz Forma Tasarla</Link>
+            <Link href="/forma-tasarla/isimli-forma-tasarla">İsimli Forma Tasarla</Link>
+          </div>
+        </details>
         <nav aria-label="Ana menü">
           <a href="#urunler">FUTBOL</a><a href="#urunler">BASKETBOL</a><a href="#urunler">VOLEYBOL</a><a href="#urunler">EŞOFMAN</a><a href="#surec">BLOG</a>
         </nav>
