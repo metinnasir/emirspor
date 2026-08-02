@@ -1,6 +1,7 @@
 import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
+import HeroSlider from "./hero-slider";
 
 const products = [
   { name: "Gece Mavisi", type: "Profesyonel maç forması", tone: "navy" },
@@ -56,16 +57,7 @@ export default function Home() {
     </header>
 
     <main>
-      <section className="campaign-hero">
-        <div className="hero-shade"></div>
-        <div className="hero-content container-wide">
-          <p className="kicker">TAKIMINIZIN KİMLİĞİNİ TASARLIYORUZ</p>
-          <h1>FORMADAN<br />DAHA FAZLASI.</h1>
-          <p className="hero-copy">Kulübünüze özel sublimasyon formalar. Güçlü tasarım, performans kumaşı ve takımınıza ait benzersiz bir görünüm.</p>
-          <a className="solid-button" href="#iletisim">TASARIMI BAŞLATALIM</a>
-        </div>
-        <a className="scroll-cue" href="#kategoriler" aria-label="Kategorilere ilerle">↓</a>
-      </section>
+      <HeroSlider />
 
       <section id="kategoriler" className="promo-grid">
         <a className="promo promo-one" href="#urunler"><span>YENİ SEZON</span><strong>MAÇ FORMALARI</strong><em>İNCELE →</em></a>
