@@ -1,4 +1,5 @@
 import Script from "next/script";
+import Image from "next/image";
 
 const products = [
   { name: "Gece Mavisi", type: "Profesyonel maç forması", tone: "navy" },
@@ -22,7 +23,7 @@ export default function Home() {
     <header className="site-header">
       <div className="header-top container-wide">
         <div className="socials" aria-label="Sosyal medya"><span>in</span><span>ig</span><span>f</span></div>
-        <a className="brand" href="#" aria-label="Emir Spor ana sayfa">EMİR<span>SPOR</span></a>
+        <a className="brand" href="#" aria-label="Emir Spor ana sayfa"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={192} height={56} priority /></a>
         <a className="header-cta" href="#iletisim">TEKLİF AL</a>
       </div>
       <div className="header-nav container-wide">
@@ -95,6 +96,6 @@ export default function Home() {
       </section>
     </main>
 
-    <footer><div className="footer-main container-wide"><a className="brand footer-brand" href="#">EMİR<span>SPOR</span></a><p>Özel futbol forması ve takım sporları üretimi.</p><div><a href="#urunler">FORMALAR</a><a href="#surec">ÜRETİM</a><a href="#iletisim">İLETİŞİM</a></div></div><div className="footer-bottom container-wide">© {new Date().getFullYear()} EMİR SPOR · TÜM HAKLARI SAKLIDIR</div></footer>
+    <footer><div className="footer-main container-wide"><a className="brand footer-brand" href="#"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={192} height={56} /></a><p>Özel futbol forması ve takım sporları üretimi.</p><div><a href="#urunler">FORMALAR</a><a href="#surec">ÜRETİM</a><a href="#iletisim">İLETİŞİM</a></div></div><div className="footer-bottom container-wide">© {new Date().getFullYear()} EMİR SPOR · TÜM HAKLARI SAKLIDIR</div></footer>
   </>;
 }
