@@ -35,9 +35,11 @@ export default function Home() {
         </div>
       </div>
       <div className="header-nav container-wide">
-        <span className="menu-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <a className="design-trigger" href="https://wa.me/905444407767?text=Merhaba%2C%20tak%C4%B1m%C4%B1ma%20%C3%B6zel%20forma%20tasarlamak%20istiyorum" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp üzerinden forma tasarla">
+          <span className="menu-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>FORMA TASARLA</strong>
+        </a>
         <nav aria-label="Ana menü">
-          <a href="#">ANA SAYFA</a><a href="#urunler">FORMALAR</a><a href="#surec">ÜRETİM</a><a href="#hakkimizda">HAKKIMIZDA</a><a href="#iletisim">İLETİŞİM</a>
+          <a href="#urunler">FUTBOL</a><a href="#urunler">BASKETBOL</a><a href="#urunler">VOLEYBOL</a><a href="#urunler">EŞOFMAN</a><a href="#surec">BLOG</a>
         </nav>
         <a className="nav-search" href="#urunler" aria-label="Ürünlerde ara" title="Ürünlerde ara"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 20-5.2-5.2a7.5 7.5 0 1 0-1.4 1.4L20 21l1-1ZM5 10.5a5.5 5.5 0 1 1 11 0 5.5 5.5 0 0 1-11 0Z" /></svg></a>
       </div>
