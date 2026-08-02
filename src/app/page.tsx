@@ -22,7 +22,12 @@ export default function Home() {
 
     <header className="site-header">
       <div className="header-top container-wide">
-        <div className="socials" aria-label="Sosyal medya"><span>in</span><span>ig</span><span>f</span></div>
+        <div className="socials" aria-label="Sosyal medya">
+          <a href="#" aria-label="Facebook" title="Facebook hesabı yakında"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v7h4v-7h3l1-4h-4V9c0-.7.3-1 1-1Z" /></svg></a>
+          <a href="#" aria-label="X" title="X hesabı yakında"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4.3l3.5 4.7L17 4h2l-5.3 6.1L20 20h-4.3l-4.1-5.4L7 20H5l5.7-6.7L5 4Zm3.3 1.7 8.3 12.6h1.2L9.5 5.7H8.3Z" /></svg></a>
+          <a href="#" aria-label="Instagram" title="Instagram hesabı yakında"><svg viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.3 2.7a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" clipRule="evenodd" /></svg></a>
+          <a href="#" aria-label="TikTok" title="TikTok hesabı yakında"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h3c.2 1.8 1.2 3 3 3.4v3a8 8 0 0 1-3-1v6.1a6.5 6.5 0 1 1-6.5-6.5H12v3.2a3.3 3.3 0 1 0 2 3V3Z" /></svg></a>
+        </div>
         <a className="brand" href="#" aria-label="Emir Spor ana sayfa"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={192} height={56} priority /></a>
         <a className="header-cta" href="#iletisim">TEKLİF AL</a>
       </div>
