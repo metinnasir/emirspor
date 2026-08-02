@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root { --navy: #071d38; --blue: #0d6efd; --sky: #eaf4ff; --gold: #f6b73c; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--navy); background: #fff; font-family: Arial, Helvetica, sans-serif; }
+a { color: inherit; text-decoration: none; }
+.container { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
+.hero { background: linear-gradient(135deg, #06172d 0%, #0b3f78 62%, #0d6efd 100%); color: white; padding: 88px 0; }
+.eyebrow { color: var(--gold); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.hero h1 { max-width: 820px; font-size: clamp(2.3rem, 6vw, 4.8rem); line-height: 1.03; margin: 16px 0; }
+.hero p { max-width: 700px; font-size: 1.18rem; line-height: 1.7; color: #dbeafe; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.button { display: inline-block; padding: 14px 20px; border-radius: 12px; background: var(--gold); color: #13233a; font-weight: 800; }
+.button.secondary { background: transparent; color: white; border: 1px solid #80b7ff; }
+header { height: 72px; display: flex; align-items: center; background: #fff; }
+nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { font-size: 1.35rem; font-weight: 900; letter-spacing: .02em; }
+.brand span { color: var(--blue); }
+.navlinks { display: flex; gap: 20px; font-weight: 700; }
+section { padding: 72px 0; }
+.section-title { max-width: 700px; margin-bottom: 32px; }
+.section-title h2 { font-size: clamp(1.9rem, 4vw, 3rem); margin: 8px 0; }
+.section-title p { color: #53657a; line-height: 1.7; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card { padding: 28px; border: 1px solid #dbe7f3; border-radius: 18px; background: white; box-shadow: 0 14px 38px rgb(12 52 92 / 8%); }
+.card h3 { margin-top: 0; }
+.card p { color: #5c6f82; line-height: 1.65; }
+.light { background: var(--sky); }
+footer { background: #06172d; color: #cbdcf0; padding: 36px 0; }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } .navlinks { display: none; } .hero { padding: 64px 0; } }

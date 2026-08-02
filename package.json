@@ -1,0 +1,33 @@
+{
+  "name": "emirspor",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "cf:deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf:upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "latest",
+    "@tailwindcss/postcss": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "9.39.1",
+    "eslint-config-next": "latest",
+    "tailwindcss": "latest",
+    "typescript": "6.0.2",
+    "wrangler": "latest"
+  },
+  "packageManager": "pnpm@11.9.0"
+}
