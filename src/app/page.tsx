@@ -39,7 +39,7 @@ export default function Home() {
         <nav aria-label="Ana menü">
           <a href="#">ANA SAYFA</a><a href="#urunler">FORMALAR</a><a href="#surec">ÜRETİM</a><a href="#hakkimizda">HAKKIMIZDA</a><a href="#iletisim">İLETİŞİM</a>
         </nav>
-        <span className="nav-note">TÜRKİYE GENELİ ÜRETİM</span>
+        <a className="nav-search" href="#urunler" aria-label="Ürünlerde ara" title="Ürünlerde ara"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 20-5.2-5.2a7.5 7.5 0 1 0-1.4 1.4L20 21l1-1ZM5 10.5a5.5 5.5 0 1 1 11 0 5.5 5.5 0 0 1-11 0Z" /></svg></a>
       </div>
     </header>
 
