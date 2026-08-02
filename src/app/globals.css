@@ -19,7 +19,7 @@ a { color:inherit; text-decoration:none; }
 .menu-mark { width:35px; display:grid; gap:7px; }
 .menu-mark i { display:block; height:2px; background:var(--ink); }
 .nav-note { justify-self:end; font-size:.67rem; letter-spacing:.14em; font-weight:900; }
-.campaign-hero { min-height:740px; position:relative; background:url('/emirspor-hero.png') center/cover no-repeat; color:#fff; display:flex; align-items:center; }
+.campaign-hero { min-height:740px; position:relative; background:url('/portfolyo/banner/ana-sayfa-hero.png') center/cover no-repeat; color:#fff; display:flex; align-items:center; }
 .hero-shade { position:absolute; inset:0; background:linear-gradient(90deg,rgba(3,15,30,.92) 0%,rgba(3,15,30,.72) 33%,rgba(3,15,30,.08) 66%); }
 .hero-content { position:relative; z-index:1; }
 .kicker { margin:0 0 20px; font-size:.75rem; font-weight:900; letter-spacing:.2em; color:#fff; }
@@ -29,7 +29,7 @@ a { color:inherit; text-decoration:none; }
 .solid-button { display:inline-block; background:var(--orange); padding:20px 30px; font-size:.78rem; font-weight:900; letter-spacing:.12em; }
 .scroll-cue { position:absolute; bottom:0; left:50%; width:56px; height:56px; display:grid; place-items:center; background:#fff; color:#111; font-size:1.35rem; }
 .promo-grid { display:grid; grid-template-columns:repeat(3,1fr); min-height:270px; }
-.promo { position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:center; padding:52px 8%; color:#fff; background-image:linear-gradient(90deg,rgba(0,0,0,.67),rgba(0,0,0,.16)),url('/emirspor-hero.png'); background-size:170%; }
+.promo { position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:center; padding:52px 8%; color:#fff; background-image:linear-gradient(90deg,rgba(0,0,0,.67),rgba(0,0,0,.16)),url('/portfolyo/banner/ana-sayfa-hero.png'); background-size:170%; }
 .promo:after { content:""; position:absolute; inset:0; border-right:1px solid rgba(255,255,255,.25); }
 .promo-one { background-position:55% 45%; }.promo-two { background-position:83% 50%; }.promo-three { background-position:100% 48%; }
 .promo span,.promo em { position:relative; z-index:1; font-style:normal; font-size:.7rem; font-weight:900; letter-spacing:.16em; }
@@ -48,7 +48,7 @@ a { color:inherit; text-decoration:none; }
 .jersey-stage>a { position:absolute; right:18px; bottom:18px; width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background:#fff; font-size:1.5rem; }
 .product>p { color:#8b8b8b; font-size:.76rem; margin:22px 0 6px; }.product h3 { font-size:1.15rem; margin:0 0 14px; }.product-link { font-size:.68rem; font-weight:900; letter-spacing:.12em; color:var(--orange); }
 .statement-section { display:grid; grid-template-columns:1.15fr .85fr; min-height:720px; background:var(--paper); }
-.statement-image { background:linear-gradient(rgba(4,20,37,.12),rgba(4,20,37,.12)),url('/emirspor-hero.png') 68% center/cover no-repeat; }
+.statement-image { background:linear-gradient(rgba(4,20,37,.12),rgba(4,20,37,.12)),url('/portfolyo/banner/ana-sayfa-hero.png') 68% center/cover no-repeat; }
 .statement-copy { padding:10%; align-self:center; }
 .statement-copy>p:not(.kicker) { max-width:590px; color:#5f6670; font-size:1.05rem; line-height:1.8; }
 .stats { display:flex; gap:70px; margin-top:45px; padding-top:35px; border-top:1px solid #ccc; }.stats div { display:grid; gap:5px; }.stats strong { font-family:Impact,sans-serif; font-size:2.6rem; }.stats span { font-size:.67rem; font-weight:900; letter-spacing:.12em; }
