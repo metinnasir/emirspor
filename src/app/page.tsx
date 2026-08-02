@@ -29,7 +29,10 @@ export default function Home() {
           <a href="#" aria-label="TikTok" title="TikTok hesabı yakında"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h3c.2 1.8 1.2 3 3 3.4v3a8 8 0 0 1-3-1v6.1a6.5 6.5 0 1 1-6.5-6.5H12v3.2a3.3 3.3 0 1 0 2 3V3Z" /></svg></a>
         </div>
         <a className="brand" href="#" aria-label="Emir Spor ana sayfa"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={192} height={56} priority /></a>
-        <a className="header-cta" href="#iletisim">TEKLİF AL</a>
+        <div className="header-contact">
+          <a className="header-phone" href="tel:+905444407767">0544-440-77-67</a>
+          <a className="header-cta" href="https://wa.me/905444407767?text=Merhaba%20sipari%C5%9F%20vermek%20istiyorum" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp üzerinden teklif al">TEKLİF AL</a>
+        </div>
       </div>
       <div className="header-nav container-wide">
         <span className="menu-mark" aria-hidden="true"><i></i><i></i><i></i></span>
