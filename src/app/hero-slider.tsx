@@ -13,8 +13,8 @@ const slides = [
   {
     src: "/urunler/slider/hali-saha-formasi-slide-model-2.png",
     alt: "Yeşil ve altın renkli özel tasarım halı saha forması",
-    title: "Takımına Özel Üretim",
-    subtitle: "Renklerin, Logon, Forman",
+    title: "Takımına Özel Forma Yaptır",
+    subtitle: "Senin Rengin Senin Forman",
   },
   {
     src: "/urunler/slider/hali-saha-formasi-slide-model-3.png",
