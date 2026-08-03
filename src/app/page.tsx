@@ -4,10 +4,18 @@ import Link from "next/link";
 import HeroSlider from "./hero-slider";
 
 const products = [
-  { name: "Gece Mavisi", type: "Profesyonel maç forması", tone: "navy" },
-  { name: "Saha Ateşi", type: "Sublimasyon takım forması", tone: "orange" },
-  { name: "Beyaz Deplasman", type: "Nefes alan performans kumaşı", tone: "white" },
-  { name: "Elektrik Mavisi", type: "Kulübe özel tasarım", tone: "blue" },
+  { name: "Gece Mavisi", tone: "navy" },
+  { name: "Saha Ateşi", tone: "orange" },
+  { name: "Beyaz Deplasman", tone: "white" },
+  { name: "Elektrik Mavisi", tone: "blue" },
+  { name: "Şampiyon Siyah", tone: "navy" },
+  { name: "Turuncu Dinamo", tone: "orange" },
+  { name: "Buz Beyazı", tone: "white" },
+  { name: "Mavi Fırtına", tone: "blue" },
+  { name: "Gece Kartalı", tone: "navy" },
+  { name: "Ateş Çizgisi", tone: "orange" },
+  { name: "Kutup Yıldızı", tone: "white" },
+  { name: "Saha Lideri", tone: "blue" },
 ];
 
 export default function Home() {
@@ -72,7 +80,8 @@ export default function Home() {
               <div className="jersey"><span>EMİR<br />SPOR</span></div>
               <a href="#iletisim" aria-label={`${product.name} için teklif al`}>+</a>
             </div>
-            <p>{product.type}</p><h3>{product.name}</h3><span className="product-link">PROJENE UYARLA →</span>
+            <h3>{product.name}</h3>
+            <a className="product-link" href="#iletisim">FİYAT İÇİN TEKLİF AL</a>
           </article>)}
         </div>
       </section>

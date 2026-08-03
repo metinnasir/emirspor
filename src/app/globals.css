@@ -67,7 +67,7 @@ a { color:inherit; text-decoration:none; }
 .section-heading h2,.statement-copy h2,.contact-banner h2 { font-family:Impact,"Arial Narrow",sans-serif; font-weight:500; letter-spacing:.02em; font-size:clamp(3rem,6vw,5.6rem); line-height:.95; margin:0 0 20px; }
 .section-heading .season-title { width:max-content; max-width:calc(100vw - 32px); margin-inline:auto; text-align:center; font-size:clamp(1.05rem,3.075vw,3.15rem); white-space:nowrap; }
 .section-heading>p:last-child { color:#6b6b6b; line-height:1.7; }
-.product-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
+.product-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:52px 26px; }
 .jersey-stage { min-height:410px; position:relative; overflow:hidden; display:grid; place-items:center; background:#efefef; }
 .jersey-stage.navy { --j1:#071c37; --j2:#10447b; }.jersey-stage.orange { --j1:#f04e12; --j2:#101b2d; }.jersey-stage.white { --j1:#f8f8f8; --j2:#1966d8; }.jersey-stage.blue { --j1:#1267e8; --j2:#06172d; }
 .product-number { position:absolute; left:18px; top:15px; color:#d0d0d0; font-family:Impact,sans-serif; font-size:4.5rem; }
@@ -75,7 +75,10 @@ a { color:inherit; text-decoration:none; }
 .white .jersey { color:#091a2f; }
 .jersey span { text-align:center; font-family:Impact,sans-serif; font-size:1.4rem; letter-spacing:.08em; }
 .jersey-stage>a { position:absolute; right:18px; bottom:18px; width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background:#fff; font-size:1.5rem; }
-.product>p { color:#8b8b8b; font-size:.76rem; margin:22px 0 6px; }.product h3 { font-size:1.15rem; margin:0 0 14px; }.product-link { font-size:.68rem; font-weight:900; letter-spacing:.12em; color:var(--orange); }
+.product { text-align:center; }
+.product h3 { margin:25px 0 10px; font-family:Impact,"Arial Narrow",sans-serif; font-size:1.35rem; font-weight:500; letter-spacing:.04em; text-transform:uppercase; }
+.product-link { display:inline-block; color:#8a8a8a; font-size:.76rem; font-weight:900; letter-spacing:.07em; transition:color .2s; }
+.product-link:hover,.product-link:focus-visible { color:var(--orange); outline:none; }
 .statement-section { display:grid; grid-template-columns:1.15fr .85fr; min-height:720px; background:var(--paper); }
 .statement-image { background:linear-gradient(rgba(4,20,37,.12),rgba(4,20,37,.12)),url('/portfolyo/banner/ana-sayfa-hero.png') 68% center/cover no-repeat; }
 .statement-copy { padding:10%; align-self:center; }
