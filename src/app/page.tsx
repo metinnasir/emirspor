@@ -154,12 +154,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="kategoriler" className="promo-grid">
-        <a className="promo promo-one" href="#urunler"><span>YENİ SEZON</span><strong>MAÇ FORMALARI</strong><em>İNCELE →</em></a>
-        <a className="promo promo-two" href="#urunler"><span>KULÜBÜNE ÖZEL</span><strong>SIFIRDAN TASARIM</strong><em>DETAYLAR →</em></a>
-        <a className="promo promo-three" href="#surec"><span>TAKIM PAKETİ</span><strong>FORMA + ŞORT</strong><em>SÜRECİ GÖR →</em></a>
-      </section>
-
       <section id="urunler" className="products-section">
         <div className="section-heading">
           <p className="kicker orange">26/27 SEZON</p>
@@ -206,6 +200,12 @@ export default function Home() {
       <section id="iletisim" className="contact-banner">
         <div><p className="kicker">SIRADAKİ FORMA SİZİN OLSUN</p><h2>TAKIMINIZI<br />BİRLİKTE TASARLAYALIM.</h2></div>
         <span className="outline-button">İLETİŞİM BİLGİLERİ YAKINDA</span>
+      </section>
+
+      <section id="kategoriler" className="promo-grid">
+        <a className="promo promo-one" href="#urunler"><span>YENİ SEZON</span><strong>MAÇ FORMALARI</strong><em>İNCELE →</em></a>
+        <a className="promo promo-two" href="#urunler"><span>KULÜBÜNE ÖZEL</span><strong>SIFIRDAN TASARIM</strong><em>DETAYLAR →</em></a>
+        <a className="promo promo-three" href="#surec"><span>TAKIM PAKETİ</span><strong>FORMA + ŞORT</strong><em>SÜRECİ GÖR →</em></a>
       </section>
     </main>
 
