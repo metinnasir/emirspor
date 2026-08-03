@@ -5,12 +5,22 @@ import { useCallback, useEffect, useState } from "react";
 
 const slides = [
   {
-    src: "/portfolyo/banner/emirspor-forma-yaptirma-slide-1.png",
-    alt: "Emir Spor ile sınır tanımadan özel forma tasarlayın",
+    src: "/urunler/slider/hali-saha-formasi-slide-model-1.png",
+    alt: "Beyaz ve bordo özel tasarım halı saha forması",
+    title: "Formanı Kendin Tasarla",
+    subtitle: "26/27 Yeni Sezon Koleksiyonu",
   },
   {
-    src: "/portfolyo/banner/emirspor-forma-yaptirma-slide-2.png",
-    alt: "10.000 TL üzeri forma siparişlerinde ücretsiz kargo",
+    src: "/urunler/slider/hali-saha-formasi-slide-model-2.png",
+    alt: "Yeşil ve altın renkli özel tasarım halı saha forması",
+    title: "Takımına Özel Üretim",
+    subtitle: "Renklerin, Logon, Forman",
+  },
+  {
+    src: "/urunler/slider/hali-saha-formasi-slide-model-3.png",
+    alt: "Kırmızı ve beyaz özel tasarım halı saha forması",
+    title: "Sahada Farkını Göster",
+    subtitle: "İsim ve Numara Dahil Tasarım",
   },
 ];
 
@@ -22,10 +32,6 @@ export default function HeroSlider() {
     setActive((current) => (current + 1) % slides.length);
   }, []);
 
-  const showPrevious = () => {
-    setActive((current) => (current - 1 + slides.length) % slides.length);
-  };
-
   useEffect(() => {
     if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(showNext, 5000);
@@ -36,7 +42,7 @@ export default function HeroSlider() {
     <section
       className="hero-slider"
       aria-roledescription="carousel"
-      aria-label="Emir Spor kampanyaları"
+      aria-label="Yeni sezon halı saha formaları"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
@@ -44,32 +50,27 @@ export default function HeroSlider() {
     >
       <div className="slider-track" style={{ transform: `translateX(-${active * 100}%)` }}>
         {slides.map((slide, index) => (
-          <div className="slider-slide" key={slide.src} aria-hidden={active !== index}>
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              width={2048}
-              height={666}
-              priority={index === 0}
-              sizes="100vw"
-            />
-          </div>
+          <article className="slider-slide" key={slide.src} aria-hidden={active !== index}>
+            <div className="slider-copy">
+              <p className="slider-title">{slide.title}</p>
+              <p className="slider-subtitle">{slide.subtitle}</p>
+              <div className="slider-links">
+                <a href="#urunler">MODELLERİ İNCELE</a>
+                <a href="https://wa.me/905444407767?text=Merhaba%2C%20tak%C4%B1m%C4%B1ma%20%C3%B6zel%20forma%20tasarlamak%20istiyorum" target="_blank" rel="noopener noreferrer">FORMA TASARLA</a>
+              </div>
+            </div>
+            <div className="slider-visual">
+              <Image src={slide.src} alt={slide.alt} width={579} height={723} priority={index === 0} sizes="(max-width: 700px) 80vw, 46vw" />
+            </div>
+          </article>
         ))}
       </div>
 
-      <button className="slider-arrow slider-previous" type="button" onClick={showPrevious} aria-label="Önceki görsel">‹</button>
-      <button className="slider-arrow slider-next" type="button" onClick={showNext} aria-label="Sonraki görsel">›</button>
-
-      <div className="slider-dots" aria-label="Slider sayfaları">
+      <div className="slider-pagination" aria-label="Slider sayfaları">
         {slides.map((slide, index) => (
-          <button
-            type="button"
-            key={slide.src}
-            className={active === index ? "active" : ""}
-            onClick={() => setActive(index)}
-            aria-label={`${index + 1}. görseli göster`}
-            aria-current={active === index ? "true" : undefined}
-          />
+          <button type="button" key={slide.src} className={active === index ? "active" : ""} onClick={() => setActive(index)} aria-label={`${index + 1}. formayı göster`} aria-current={active === index ? "true" : undefined}>
+            <span>0{index + 1}</span><i aria-hidden="true" />
+          </button>
         ))}
       </div>
     </section>

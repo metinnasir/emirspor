@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Josefin_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "700", "900"], variable: "--font-body", display: "swap" });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "700", "800", "900"], variable: "--font-body", display: "swap" });
 const josefinSans = Josefin_Sans({ subsets: ["latin"], weight: ["400", "500", "700"], variable: "--font-heading", display: "swap" });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://emirspor.com";
