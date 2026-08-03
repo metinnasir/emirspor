@@ -87,6 +87,35 @@ export default function Home() {
     <main>
       <HeroSlider />
 
+      <section className="service-benefits" aria-label="Alışveriş avantajları">
+        <div className="service-benefits-grid container-wide">
+          <article className="service-benefit">
+            <span className="service-benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M4 11h24v23H14M28 19h8l8 9v6h-6M10 18H2m10 7H5m8 7H8"/><circle cx="17" cy="36" r="4"/><circle cx="34" cy="36" r="4"/></svg>
+            </span>
+            <div><h3>Free Shipping</h3><p>Free Shipping for orders over £130</p></div>
+          </article>
+          <article className="service-benefit">
+            <span className="service-benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="6" y="12" width="27" height="25" rx="2"/><path d="M12 18h12m-12 7h8M34 8l8 3v8c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10v-8l8-3Z"/><path d="m31 18 2 2 4-5"/></svg>
+            </span>
+            <div><h3>Money Guarantee</h3><p>Within 30 days for an exchange.</p></div>
+          </article>
+          <article className="service-benefit">
+            <span className="service-benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="7" y="15" width="34" height="25" rx="2"/><path d="M13 15V9h20v6M7 23h34"/><circle cx="34" cy="31" r="2"/></svg>
+            </span>
+            <div><h3>Flexible Payment</h3><p>Pay with Multiple Credit Cards</p></div>
+          </article>
+          <article className="service-benefit">
+            <span className="service-benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="8"/><path d="m13 13 6 6m10 10 6 6m0-22-6 6M19 29l-6 6"/></svg>
+            </span>
+            <div><h3>Online Support</h3><p>24 hours a day, 7 days a week</p></div>
+          </article>
+        </div>
+      </section>
+
       <section className="featured-categories" aria-labelledby="featured-categories-title">
         <h2 id="featured-categories-title">Forma Koleksiyonları</h2>
         <div className="featured-category-grid container-wide">
