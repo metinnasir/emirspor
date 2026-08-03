@@ -105,7 +105,7 @@ export default function Home() {
             <span className="service-benefit-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48"><rect x="7" y="15" width="34" height="25" rx="2"/><path d="M13 15V9h20v6M7 23h34"/><circle cx="34" cy="31" r="2"/></svg>
             </span>
-            <div><h3>Flexible Payment</h3><p>Pay with Multiple Credit Cards</p></div>
+            <div><h3>Fiyat Garantisi</h3><p>Tüm baskılar ücretsiz...</p></div>
           </article>
           <article className="service-benefit">
             <span className="service-benefit-icon" aria-hidden="true">
