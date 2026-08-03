@@ -7,7 +7,7 @@ const slides = [
   {
     src: "/urunler/slider/hali-saha-formasi-slide-model-1.png",
     alt: "Beyaz ve bordo özel tasarım halı saha forması",
-    title: "Formanı Kendin Tasarla",
+    title: "Halısaha Forması Tasarla",
     subtitle: "26/27 Yeni Sezon Koleksiyonu",
   },
   {
@@ -52,7 +52,11 @@ export default function HeroSlider() {
         {slides.map((slide, index) => (
           <article className="slider-slide" key={slide.src} aria-hidden={active !== index} style={{ transform: `translateY(${(active - index) * 100}%)` }}>
             <div className="slider-copy">
-              <p className="slider-title">{slide.title}</p>
+              {index === 0 ? (
+                <h2 className="slider-title">{slide.title}</h2>
+              ) : (
+                <p className="slider-title">{slide.title}</p>
+              )}
               <p className="slider-subtitle">{slide.subtitle}</p>
               <div className="slider-links">
                 <a href="#urunler">MODELLERİ İNCELE</a>
