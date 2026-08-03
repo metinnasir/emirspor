@@ -31,7 +31,8 @@ export default function Home() {
     <Script id="organization-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
     <header className="site-header">
-      <div className="header-top container-wide">
+      <div className="header-top">
+        <p>Halısaha Forması Tasarla / Ucuz Forma Yaptırma</p>
       </div>
       <div className="header-nav container-wide">
         <a className="brand nav-brand" href="#" aria-label="Emir Spor ana sayfa"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={144} height={42} priority /></a>
