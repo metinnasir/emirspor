@@ -88,7 +88,7 @@ export default function Home() {
       <HeroSlider />
 
       <section className="featured-categories" aria-labelledby="featured-categories-title">
-        <h2 id="featured-categories-title">Forma Koleksiyonu</h2>
+        <h2 id="featured-categories-title">Forma Koleksiyonları</h2>
         <div className="featured-category-grid container-wide">
           {featuredCategories.map((category) => (
             <Link className="featured-category" href={category.href} key={category.name}>
