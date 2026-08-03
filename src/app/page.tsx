@@ -137,6 +137,23 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="collection-campaign" aria-labelledby="collection-campaign-title">
+        <div className="collection-campaign-visual">
+          <Image
+            src="/urunler/slider/hali-saha-formasi-slide-model-1.png"
+            alt="Özel tasarım halı saha forması kampanyası"
+            width={580}
+            height={724}
+            sizes="(max-width: 700px) 88vw, 46vw"
+          />
+        </div>
+        <div className="collection-campaign-copy">
+          <p>A Nature&apos;s Touch</p>
+          <h2 id="collection-campaign-title"><strong>Get 20%</strong> Off on all<br />Cosmetic Cream Packs</h2>
+          <a href="#urunler">Browse Products</a>
+        </div>
+      </section>
+
       <section id="kategoriler" className="promo-grid">
         <a className="promo promo-one" href="#urunler"><span>YENİ SEZON</span><strong>MAÇ FORMALARI</strong><em>İNCELE →</em></a>
         <a className="promo promo-two" href="#urunler"><span>KULÜBÜNE ÖZEL</span><strong>SIFIRDAN TASARIM</strong><em>DETAYLAR →</em></a>
