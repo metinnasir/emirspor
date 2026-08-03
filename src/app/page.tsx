@@ -18,6 +18,27 @@ const products = [
   { name: "Saha Lideri", tone: "blue" },
 ];
 
+const featuredCategories = [
+  {
+    name: "Futbol Forması",
+    image: "/urunler/slider/hali-saha-formasi-slide-model-1.png",
+    href: "/forma-tasarla/futbol-formasi-tasarla",
+    color: "mint",
+  },
+  {
+    name: "Halı Saha Forması",
+    image: "/urunler/slider/hali-saha-formasi-slide-model-2.png",
+    href: "/forma-tasarla/hali-saha-formasi-tasarla",
+    color: "rose",
+  },
+  {
+    name: "Takım Forması",
+    image: "/urunler/slider/hali-saha-formasi-slide-model-3.png",
+    href: "/forma-tasarla/takim-formasi-tasarla",
+    color: "sand",
+  },
+];
+
 export default function Home() {
   const schema = {
     "@context": "https://schema.org",
@@ -65,6 +86,27 @@ export default function Home() {
 
     <main>
       <HeroSlider />
+
+      <section className="featured-categories" aria-labelledby="featured-categories-title">
+        <h2 id="featured-categories-title">Forma Koleksiyonu</h2>
+        <div className="featured-category-grid container-wide">
+          {featuredCategories.map((category) => (
+            <Link className="featured-category" href={category.href} key={category.name}>
+              <div className={`featured-category-visual ${category.color}`}>
+                <Image
+                  src={category.image}
+                  alt={`${category.name} modeli`}
+                  width={580}
+                  height={724}
+                  sizes="(max-width: 700px) 86vw, 33vw"
+                />
+              </div>
+              <h3>{category.name}</h3>
+              <p>450 TL&apos;den başlayan fiyatlarla</p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section id="kategoriler" className="promo-grid">
         <a className="promo promo-one" href="#urunler"><span>YENİ SEZON</span><strong>MAÇ FORMALARI</strong><em>İNCELE →</em></a>
