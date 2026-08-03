@@ -48,9 +48,9 @@ export default function HeroSlider() {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="slider-track" style={{ transform: `translateX(-${active * 100}%)` }}>
+      <div className="slider-track">
         {slides.map((slide, index) => (
-          <article className="slider-slide" key={slide.src} aria-hidden={active !== index}>
+          <article className="slider-slide" key={slide.src} aria-hidden={active !== index} style={{ transform: `translateY(${(active - index) * 100}%)` }}>
             <div className="slider-copy">
               <p className="slider-title">{slide.title}</p>
               <p className="slider-subtitle">{slide.subtitle}</p>
