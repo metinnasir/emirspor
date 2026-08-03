@@ -62,7 +62,7 @@ a { color:inherit; text-decoration:none; }
 .promo-one { background-position:55% 45%; }.promo-two { background-position:83% 50%; }.promo-three { background-position:100% 48%; }
 .promo span,.promo em { position:relative; z-index:1; font-style:normal; font-size:.7rem; font-weight:900; letter-spacing:.16em; }
 .promo strong { position:relative; z-index:1; font-family:Impact,"Arial Narrow",sans-serif; font-size:clamp(2rem,3vw,3.3rem); letter-spacing:.03em; margin:8px 0 25px; }
-.products-section { padding:110px 0 125px; }
+.products-section { padding:55px 0 125px; }
 .section-heading { text-align:center; max-width:780px; margin:0 auto 55px; }
 .section-heading h2,.statement-copy h2,.contact-banner h2 { font-family:Impact,"Arial Narrow",sans-serif; font-weight:500; letter-spacing:.02em; font-size:clamp(3rem,6vw,5.6rem); line-height:.95; margin:0 0 20px; }
 .section-heading .season-title { width:max-content; max-width:calc(100vw - 32px); margin-inline:auto; text-align:center; font-size:clamp(1.05rem,3.075vw,3.15rem); white-space:nowrap; }
