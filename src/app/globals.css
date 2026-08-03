@@ -101,10 +101,10 @@ a { color:inherit; text-decoration:none; }
 .products-section { padding:55px 0 125px; }
 .section-heading { text-align:center; max-width:780px; margin:0 auto 55px; }
 .section-heading h2,.statement-copy h2,.contact-banner h2 { font-family:var(--font-heading),sans-serif; font-weight:500; letter-spacing:.02em; font-size:clamp(3rem,6vw,5.6rem); line-height:.95; margin:0 0 20px; }
-.section-heading .season-title { width:max-content; max-width:calc(100vw - 32px); margin-inline:auto; text-align:center; font-size:clamp(1.05rem,3.075vw,3.15rem); white-space:nowrap; }
+.section-heading .season-title { width:max-content; max-width:calc(100vw - 32px); margin-inline:auto; text-align:center; font-size:clamp(2rem,3.075vw,3.15rem); font-weight:700; white-space:nowrap; }
 .section-heading>p:last-child { color:#6b6b6b; line-height:1.7; }
-.product-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:52px 26px; }
-.jersey-stage { min-height:410px; position:relative; overflow:hidden; display:grid; place-items:center; background:#efefef; }
+.product-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:58px 30px; }
+.jersey-stage { min-height:0; aspect-ratio:1/1; position:relative; overflow:hidden; display:grid; place-items:center; background:#efefef; }
 .product-image-stage { aspect-ratio:1/1; overflow:hidden; display:grid; place-items:center; background:#efefef; }
 .product-image-stage img { width:100%; height:100%; object-fit:contain; transition:transform .45s cubic-bezier(.22,.61,.36,1); }
 .product:hover .product-image-stage img,.product:focus-within .product-image-stage img { transform:scale(1.1); }

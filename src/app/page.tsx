@@ -13,9 +13,6 @@ const products = [
   { name: "Buz Beyazı", tone: "white" },
   { name: "Mavi Fırtına", tone: "blue" },
   { name: "Gece Kartalı", tone: "navy" },
-  { name: "Ateş Çizgisi", tone: "orange" },
-  { name: "Kutup Yıldızı", tone: "white" },
-  { name: "Saha Lideri", tone: "blue" },
 ];
 
 const featuredCategories = [
@@ -157,14 +154,14 @@ export default function Home() {
       <section id="urunler" className="products-section">
         <div className="section-heading">
           <p className="kicker orange">26/27 SEZON</p>
-          <h2 className="season-title">YENİ SEZON HALI SAHA FORMA MODELLERİ</h2>
+          <h2 className="season-title">Yeni Ürünler</h2>
           <p>En çok tercih edilen halı saha forma modelleri.</p>
         </div>
         <div className="product-grid container-wide">
           {products.map((product, index) => <article className="product" key={product.name}>
             {product.image ? (
               <div className="product-image-stage">
-                <Image src={product.image} alt={product.name} width={1369} height={1542} sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 25vw" />
+                <Image src={product.image} alt={product.name} width={1369} height={1542} sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" />
               </div>
             ) : (
               <div className={`jersey-stage ${product.tone}`}>
