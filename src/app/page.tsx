@@ -32,13 +32,9 @@ export default function Home() {
 
     <header className="site-header">
       <div className="header-top container-wide">
-        <div className="header-contact">
-          <a className="header-phone" href="tel:+905444407767">0544-440-77-67</a>
-          <a className="header-cta" href="https://wa.me/905444407767?text=Merhaba%20sipari%C5%9F%20vermek%20istiyorum" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp üzerinden teklif al">TEKLİF AL</a>
-        </div>
       </div>
       <div className="header-nav container-wide">
-        <a className="brand nav-brand" href="#" aria-label="Emir Spor ana sayfa"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={192} height={56} priority /></a>
+        <a className="brand nav-brand" href="#" aria-label="Emir Spor ana sayfa"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={144} height={42} priority /></a>
         <nav aria-label="Ana menü">
           <a href="#urunler">FUTBOL</a><a href="#urunler">BASKETBOL</a><a href="#urunler">VOLEYBOL</a><a href="#urunler">EŞOFMAN</a><a href="#surec">BLOG</a>
           <details className="design-menu">
