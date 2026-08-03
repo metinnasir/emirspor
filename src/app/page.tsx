@@ -4,7 +4,7 @@ import Link from "next/link";
 import HeroSlider from "./hero-slider";
 
 const products = [
-  { name: "Gece Mavisi", tone: "navy" },
+  { name: "Almanya Beyaz Şimşek Desen Halı Saha Forması", tone: "navy", image: "/urunler/almanya-beyaz-simsek-desen-hali-saha-formasi.png", price: "450 TL" },
   { name: "Saha Ateşi", tone: "orange" },
   { name: "Beyaz Deplasman", tone: "white" },
   { name: "Elektrik Mavisi", tone: "blue" },
@@ -75,13 +75,18 @@ export default function Home() {
         </div>
         <div className="product-grid container-wide">
           {products.map((product, index) => <article className="product" key={product.name}>
-            <div className={`jersey-stage ${product.tone}`}>
-              <span className="product-number">0{index + 1}</span>
-              <div className="jersey"><span>EMİR<br />SPOR</span></div>
-              <a href="#iletisim" aria-label={`${product.name} için teklif al`}>+</a>
-            </div>
+            {product.image ? (
+              <div className="product-image-stage">
+                <Image src={product.image} alt={product.name} width={1369} height={1542} sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 25vw" />
+              </div>
+            ) : (
+              <div className={`jersey-stage ${product.tone}`}>
+                <span className="product-number">0{index + 1}</span>
+                <div className="jersey"><span>EMİR<br />SPOR</span></div>
+              </div>
+            )}
             <h3>{product.name}</h3>
-            <a className="product-link" href="#iletisim">FİYAT İÇİN TEKLİF AL</a>
+            <span className="product-price">{product.price ?? "450 TL"}</span>
           </article>)}
         </div>
       </section>
