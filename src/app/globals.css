@@ -7,7 +7,7 @@ body { margin:0; color:var(--ink); background:#fff; font-family:var(--font-body)
 a { color:inherit; text-decoration:none; }
 .container-wide { width:min(1450px, calc(100% - 64px)); margin-inline:auto; }
 .site-header { background:#fff; position:relative; z-index:10; }
-.header-top { min-height:112px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; }
+.header-top { min-height:80px; display:flex; justify-content:flex-end; align-items:center; }
 .socials { display:flex; gap:10px; }
 .socials a { width:38px; height:38px; display:grid; place-items:center; border:1px solid #d7d7d7; border-radius:50%; transition:background-color .2s,color .2s,border-color .2s,transform .2s; }
 .socials svg { width:15px; height:15px; fill:currentColor; }
@@ -21,25 +21,28 @@ a { color:inherit; text-decoration:none; }
 .header-cta { display:inline-block; background:var(--orange); color:#fff; padding:22px 40px; font-size:.76rem; font-weight:900; letter-spacing:.16em; box-shadow:0 0 0 0 rgba(255,90,0,.3); transition:background-color .2s,transform .2s,box-shadow .2s; }
 .header-cta:hover,.header-cta:focus-visible { background:#e94f00; transform:translateY(-2px); box-shadow:0 8px 22px rgba(255,90,0,.24); outline:none; }
 .header-nav { min-height:82px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; border-top:1px solid #dedede; }
-.header-nav nav { display:flex; gap:35px; font-family:var(--font-heading),sans-serif; font-size:.95rem; font-weight:700; letter-spacing:.12em; }
+.header-nav nav { display:flex; align-items:center; gap:30px; font-family:var(--font-heading),sans-serif; font-size:.95rem; font-weight:700; letter-spacing:.1em; }
 .header-nav nav a:first-child { border-bottom:2px solid var(--ink); padding-bottom:6px; }
 .header-nav nav a { transition:color .2s; }
 .header-nav nav a:hover,.header-nav nav a:focus-visible { color:var(--orange); outline:none; }
-.design-menu { justify-self:start; position:relative; }
+.design-menu { position:relative; }
 .design-menu summary { list-style:none; cursor:pointer; }
 .design-menu summary::-webkit-details-marker { display:none; }
-.design-trigger { display:flex; align-items:center; gap:15px; font-family:var(--font-heading),sans-serif; font-size:.82rem; letter-spacing:.12em; transition:color .2s; }
+.design-trigger { display:flex; align-items:center; font-family:inherit; font-size:inherit; font-weight:inherit; letter-spacing:inherit; transition:color .2s; }
 .design-trigger:hover,.design-trigger:focus-visible { color:var(--orange); outline:none; }
 .menu-mark { width:35px; display:grid; gap:7px; }
 .menu-mark i { display:block; height:2px; background:var(--ink); }
 .design-trigger:hover .menu-mark i,.design-trigger:focus-visible .menu-mark i { background:var(--orange); }
-.design-dropdown { position:absolute; left:0; top:52px; width:315px; padding:12px 0; background:#fff; border-top:3px solid var(--orange); box-shadow:0 18px 45px rgba(0,0,0,.16); z-index:30; }
+.design-dropdown { position:absolute; right:0; top:34px; width:315px; padding:12px 0; background:#fff; border-top:3px solid var(--orange); box-shadow:0 18px 45px rgba(0,0,0,.16); z-index:30; }
 .design-dropdown a { display:block; padding:13px 22px; border-bottom:1px solid #ececec; font-size:.75rem; font-weight:900; letter-spacing:.04em; text-transform:uppercase; transition:color .2s,background-color .2s,padding-left .2s; }
 .design-dropdown a:last-child { border-bottom:0; }
 .design-dropdown a:hover,.design-dropdown a:focus-visible { color:var(--orange); background:#faf6f2; padding-left:28px; outline:none; }
 .nav-search { justify-self:end; width:42px; height:42px; display:grid; place-items:center; border:1px solid #d7d7d7; border-radius:50%; transition:color .2s,border-color .2s,transform .2s; }
 .nav-search svg { width:19px; height:19px; fill:currentColor; }
 .nav-search:hover,.nav-search:focus-visible { color:var(--orange); border-color:var(--orange); transform:translateY(-2px); outline:none; }
+.nav-brand { justify-self:start; }
+.nav-actions { justify-self:end; display:flex; align-items:center; gap:18px; }
+.nav-actions .socials a { width:34px; height:34px; }
 .hero-slider { position:relative; width:100%; overflow:hidden; background:#020304; }
 .slider-track { display:flex; width:100%; transition:transform .7s cubic-bezier(.22,.61,.36,1); }
 .slider-slide { position:relative; flex:0 0 100%; aspect-ratio:2048/666; background:#020304; }
