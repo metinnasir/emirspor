@@ -237,8 +237,17 @@ export default function Home() {
       </section>
 
       <section id="iletisim" className="contact-banner">
-        <div><p className="kicker">SIRADAKİ FORMA SİZİN OLSUN</p><h2>TAKIMINIZI<br />BİRLİKTE TASARLAYALIM.</h2></div>
-        <span className="outline-button">İLETİŞİM BİLGİLERİ YAKINDA</span>
+        <div><p className="kicker">SIRADAKİ FORMA SİZİN OLSUN</p><h2>Halısaha Formanızı<br />Birlikte Tasarlayalım</h2></div>
+        <a
+          className="whatsapp-button"
+          href="https://wa.me/905444407767?text=Merhaba%20sipari%C5%9F%20vermek%20istiyorum"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp üzerinden sipariş ver"
+        >
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3A12.87 12.87 0 0 0 5 22.49L3.28 29l6.67-1.75A12.96 12.96 0 1 0 16.04 3Zm0 23.58a10.7 10.7 0 0 1-5.46-1.49l-.39-.23-3.96 1.04 1.06-3.86-.25-.4a10.66 10.66 0 1 1 9 4.94Zm5.85-7.99c-.32-.16-1.9-.94-2.2-1.05-.29-.11-.5-.16-.71.16-.21.32-.82 1.05-1 1.26-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59a9.62 9.62 0 0 1-1.78-2.21c-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.72-.98-2.35-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.64 0 1.56 1.14 3.07 1.3 3.28.16.21 2.24 3.42 5.42 4.79.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.9-.77 2.17-1.52.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z" /></svg>
+          <span>WHATSAPP&apos;TAN SİPARİŞ VER</span>
+        </a>
       </section>
 
       <section id="kategoriler" className="promo-grid">
