@@ -213,6 +213,17 @@ export default function Home() {
             <a href="#urunler">Modelleri inceleyin</a>
           </div>
         </div>
+        <div className="editorial-product-row container-wide">
+          <div className="editorial-product-copy">
+            <p className="editorial-eyebrow">Profesyonel Dokunuş</p>
+            <h2>Kişiye Özel Forma</h2>
+            <p className="editorial-description">Oyuncu ismi, forma numarası, takım logosu ve sponsor baskılarıyla her detayı size özel hazırlıyoruz.</p>
+            <a href="#urunler">Formanı tasarla</a>
+          </div>
+          <div className="editorial-product-image">
+            <Image src="/urunler/slider/hali-saha-formasi-slide-model-1.png" alt="Beyaz ve bordo kişiye özel halı saha forması" width={580} height={724} sizes="(max-width: 700px) 100vw, 50vw" />
+          </div>
+        </div>
       </section>
 
       <section id="hakkimizda" className="statement-section">
