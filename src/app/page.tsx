@@ -147,7 +147,7 @@ export default function Home() {
         </div>
         <div className="collection-campaign-copy">
           <p>A Nature&apos;s Touch</p>
-          <h2 id="collection-campaign-title"><strong>Get 20%</strong> Off on all<br />Cosmetic Cream Packs</h2>
+          <h2 id="collection-campaign-title"><strong>Sezon sonu</strong> indirimlerini<br />kaçırma</h2>
           <a href="#urunler">Browse Products</a>
         </div>
       </section>
