@@ -8,7 +8,7 @@ const brands = [
   { name: "Forma Atölyesi", style: "logo", image: "/portfolyo/logo/referans-logo-3.png", width: 1050, height: 917 },
   { name: "Takımın Ruhu", style: "logo", image: "/portfolyo/logo/referans-logo-2.png", width: 1370, height: 912 },
   { name: "Saha Stili", style: "logo", image: "/portfolyo/logo/referans-logo-1.png", width: 2048, height: 684 },
-  { name: "Faby Teamwear", style: "bold" },
+  { name: "Faby Teamwear", style: "logo", image: "/portfolyo/logo/referans-logo-6.png", width: 894, height: 910 },
   { name: "Yeni Nesil Forma", style: "classic" },
 ];
 
