@@ -226,16 +226,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="hakkimizda" className="statement-section">
-        <div className="statement-image" role="img" aria-label="Özel forma giyen futbolcular"></div>
-        <div className="statement-copy">
-          <p className="kicker orange">EMİR SPOR ATÖLYESİ</p>
-          <h2>TAKIMINIZ İÇİN<br />TEK BİR ÇİZGİ.</h2>
-          <p>Hazır kalıpların ötesine geçiyoruz. Renk seçiminden logo yerleşimine, kumaştan numaralandırmaya kadar her detayı kulübünüzle birlikte oluşturuyoruz.</p>
-          <div className="stats"><div><strong>%100</strong><span>ÖZEL TASARIM</span></div><div><strong>3</strong><span>ADIMDA ÜRETİM</span></div></div>
-        </div>
-      </section>
-
       <section id="iletisim" className="contact-banner">
         <div><p className="kicker">SIRADAKİ FORMA SİZİN OLSUN</p><h2>Halısaha Formanızı<br />Birlikte Tasarlayalım</h2></div>
         <a
