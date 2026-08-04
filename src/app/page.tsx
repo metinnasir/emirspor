@@ -190,6 +190,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="editorial-products" aria-label="Forma üretimi ve tasarım seçenekleri">
+        <div className="editorial-product-row container-wide">
+          <div className="editorial-product-copy">
+            <p className="editorial-eyebrow">Geleneksel Yöntemler</p>
+            <h2>Takım Forması Üretimi</h2>
+            <p className="editorial-description">Takımınızın renkleri, logosu, isim ve numara detaylarıyla sahaya özel, dayanıklı ve konforlu formalar üretiyoruz.</p>
+            <a href="#urunler">450 TL&apos;den başlayan fiyatlarla</a>
+          </div>
+          <div className="editorial-product-image">
+            <Image src="/urunler/slider/hali-saha-formasi-slide-model-2.png" alt="Takıma özel yeşil halı saha forması" width={580} height={724} sizes="(max-width: 700px) 100vw, 50vw" />
+          </div>
+        </div>
+        <div className="editorial-product-row reverse container-wide">
+          <div className="editorial-product-image">
+            <Image src="/urunler/slider/hali-saha-formasi-slide-model-3.png" alt="Kırmızı özel tasarım halı saha forması" width={580} height={724} sizes="(max-width: 700px) 100vw, 50vw" />
+          </div>
+          <div className="editorial-product-copy">
+            <p className="editorial-eyebrow">Tasarım Devrimi</p>
+            <h2>Sublimasyon Forma</h2>
+            <p className="editorial-description">Sınırsız renk ve desen seçeneğiyle, solmayan baskılar kullanarak takımınıza özel sublimasyon forma tasarlıyoruz.</p>
+            <a href="#urunler">Modelleri inceleyin</a>
+          </div>
+        </div>
+      </section>
+
       <section id="hakkimizda" className="statement-section">
         <div className="statement-image" role="img" aria-label="Özel forma giyen futbolcular"></div>
         <div className="statement-copy">
