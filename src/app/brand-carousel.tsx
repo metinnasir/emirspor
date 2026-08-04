@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const brands = [
   { name: "Emir Spor", style: "script" },
   { name: "Forma Atölyesi", style: "serif" },
   { name: "Takımın Ruhu", style: "round" },
-  { name: "Saha Stili", style: "thin" },
+  { name: "Saha Stili", style: "logo", image: "/portfolyo/logo/referans-logo-1.png" },
   { name: "Faby Teamwear", style: "bold" },
   { name: "Yeni Nesil Forma", style: "classic" },
 ];
@@ -36,7 +37,9 @@ export default function BrandCarousel() {
           style={{ transform: `translateX(-${safeIndex * (100 / visible)}%)`, "--brand-visible": visible } as React.CSSProperties}
         >
           {brands.map((brand) => (
-            <div className={`brand-mark ${brand.style}`} key={brand.name}>{brand.name}</div>
+            <div className={`brand-mark ${brand.style}`} key={brand.name}>
+              {brand.image ? <Image src={brand.image} alt={brand.name} width={2048} height={684} sizes="260px" /> : brand.name}
+            </div>
           ))}
         </div>
       </div>
