@@ -194,7 +194,7 @@ export default function Home() {
       <section id="surec" className="process-section">
         <div className="section-heading light-heading"><p className="kicker orange">TAKIMINA ÖZEL HALISAHA FORMASI</p><h2>FİKİRDEN SAHAYA</h2></div>
         <div className="process-grid container-wide">
-          <article><b>01</b><h3>İhtiyacı anlatın</h3><p>Takım sayısı, renkler, bedenler ve teslim tarihini paylaşın.</p></article>
+          <article><b>01</b><h3>İhtiyacı anlatın</h3><p>Takımına özel halısaha forması tasarlamak için forma detaylarını paylaşın.</p></article>
           <article><b>02</b><h3>Tasarımı görün</h3><p>Logo, sponsor, isim ve numaralarla size özel tasarımı hazırlayalım.</p></article>
           <article><b>03</b><h3>Sahaya çıkın</h3><p>Onaydan sonra üretim, kalite kontrol ve teslimat sürecini tamamlayalım.</p></article>
         </div>
