@@ -2,6 +2,7 @@ import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
 import HeroSlider from "./hero-slider";
+import BrandCarousel from "./brand-carousel";
 
 const products = [
   { name: "Almanya Beyaz Şimşek Desen Halı Saha Forması", tone: "navy", image: "/urunler/almanya-beyaz-simsek-desen-hali-saha-formasi.png", price: "450 TL" },
@@ -174,6 +175,8 @@ export default function Home() {
           </article>)}
         </div>
       </section>
+
+      <BrandCarousel />
 
       <section id="hakkimizda" className="statement-section">
         <div className="statement-image" role="img" aria-label="Özel forma giyen futbolcular"></div>
