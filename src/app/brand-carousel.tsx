@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const brands = [
   { name: "Emir Spor", style: "script" },
-  { name: "Forma Atölyesi", style: "serif" },
+  { name: "Forma Atölyesi", style: "logo", image: "/portfolyo/logo/referans-logo-3.png", width: 1050, height: 917 },
   { name: "Takımın Ruhu", style: "logo", image: "/portfolyo/logo/referans-logo-2.png", width: 1370, height: 912 },
   { name: "Saha Stili", style: "logo", image: "/portfolyo/logo/referans-logo-1.png", width: 2048, height: 684 },
   { name: "Faby Teamwear", style: "bold" },
