@@ -176,6 +176,9 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="brand-carousel-heading">
+        <h2>Referanslarımız</h2>
+      </div>
       <BrandCarousel />
 
       <section id="hakkimizda" className="statement-section">
