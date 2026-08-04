@@ -148,7 +148,7 @@ export default function Home() {
         <div className="collection-campaign-copy">
           <p>Yeni sezon halısaha formalarında...</p>
           <h2 id="collection-campaign-title"><strong>Sezon sonu</strong> indirimlerini<br />kaçırma</h2>
-          <a href="#urunler">Browse Products</a>
+          <a href="#urunler">Şimdi Sipariş Ver</a>
         </div>
       </section>
 
