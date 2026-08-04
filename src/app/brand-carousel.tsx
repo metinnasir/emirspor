@@ -6,8 +6,8 @@ import Image from "next/image";
 const brands = [
   { name: "Emir Spor", style: "script" },
   { name: "Forma Atölyesi", style: "serif" },
-  { name: "Takımın Ruhu", style: "round" },
-  { name: "Saha Stili", style: "logo", image: "/portfolyo/logo/referans-logo-1.png" },
+  { name: "Takımın Ruhu", style: "logo", image: "/portfolyo/logo/referans-logo-2.png", width: 1370, height: 912 },
+  { name: "Saha Stili", style: "logo", image: "/portfolyo/logo/referans-logo-1.png", width: 2048, height: 684 },
   { name: "Faby Teamwear", style: "bold" },
   { name: "Yeni Nesil Forma", style: "classic" },
 ];
@@ -38,7 +38,7 @@ export default function BrandCarousel() {
         >
           {brands.map((brand) => (
             <div className={`brand-mark ${brand.style}`} key={brand.name}>
-              {brand.image ? <Image src={brand.image} alt={brand.name} width={2048} height={684} sizes="260px" /> : brand.name}
+              {brand.image ? <Image src={brand.image} alt={brand.name} width={brand.width} height={brand.height} sizes="260px" /> : brand.name}
             </div>
           ))}
         </div>
