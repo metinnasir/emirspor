@@ -55,6 +55,34 @@ const customerPhotos = [
   "Üretimi tamamlanan kırmızı yeşil takım forması",
 ];
 
+const recentPosts = [
+  {
+    title: "Halı Saha Forması Nasıl Tasarlanır?",
+    summary: "Takım renklerinden kumaş seçimine kadar özel halı saha forması tasarlarken dikkat edilmesi gereken temel adımlar.",
+    image: "/portfolyo/musteriler/11.webp",
+  },
+  {
+    title: "Sublimasyon Forma Nedir?",
+    summary: "Solmayan renkler, sınırsız desen ve uzun ömürlü baskı avantajlarıyla sublimasyon forma üretimini yakından tanıyın.",
+    image: "/portfolyo/musteriler/12.webp",
+  },
+  {
+    title: "Takım Forması Yaptırma Rehberi",
+    summary: "Beden listesinden logo ve sponsor baskısına kadar takım forması sipariş sürecini doğru planlamanın püf noktaları.",
+    image: "/portfolyo/musteriler/13.webp",
+  },
+  {
+    title: "Forma Kumaşı Nasıl Seçilir?",
+    summary: "Nefes alan, teri uzaklaştıran ve sahada hareket özgürlüğü sağlayan forma kumaşlarını karşılaştırıyoruz.",
+    image: "/portfolyo/musteriler/09.webp",
+  },
+  {
+    title: "İsimli Forma Tasarım Önerileri",
+    summary: "Oyuncu ismi, numara, takım arması ve sponsor logolarını dengeli yerleştirmek için kullanabileceğiniz tasarım fikirleri.",
+    image: "/portfolyo/musteriler/15.webp",
+  },
+];
+
 export default function Home() {
   const schema = {
     "@context": "https://schema.org",
@@ -280,6 +308,26 @@ export default function Home() {
                 sizes="(max-width: 560px) 50vw, (max-width: 900px) 33vw, 20vw"
               />
             </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="recent-posts" aria-labelledby="recent-posts-title">
+        <div className="recent-posts-heading container-wide">
+          <p className="kicker orange">FORMA REHBERİ</p>
+          <h2 id="recent-posts-title">Yeni Blog Yazıları</h2>
+        </div>
+        <div className="recent-posts-grid container-wide">
+          {recentPosts.map((post) => (
+            <article className="recent-post-card" key={post.title}>
+              <div className="recent-post-image">
+                <Image src={post.image} alt={post.title} fill sizes="(max-width: 560px) 100vw, (max-width: 900px) 33vw, 20vw" />
+              </div>
+              <div className="recent-post-copy">
+                <h3>{post.title}</h3>
+                <p>{post.summary}</p>
+              </div>
+            </article>
           ))}
         </div>
       </section>
