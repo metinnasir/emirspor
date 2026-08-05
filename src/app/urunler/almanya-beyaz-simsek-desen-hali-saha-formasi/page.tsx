@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import styles from "./product.module.css";
-import { CollectionCampaign, SiteFooter } from "../../site-sections";
+import { CollectionCampaign, SiteFooter, SiteHeader } from "../../site-sections";
 
 const productName = "Almanya Beyaz Şimşek Desen Halı Saha Forması";
 const productUrl = "https://emirspor.com/urunler/almanya-beyaz-simsek-desen-hali-saha-formasi";
@@ -51,19 +51,7 @@ export default function ProductPage() {
   return <>
     <Script id="product-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-    <header className={styles.header}>
-      <div className={styles.topline}>HALI SAHA FORMASI TASARLA · TAKIMINA ÖZEL ÜRETİM</div>
-      <div className={`${styles.nav} container-wide`}>
-        <Link href="/" aria-label="Emir Spor ana sayfa"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={154} height={45} priority /></Link>
-        <nav aria-label="Ürün sayfası menüsü">
-          <Link href="/#urunler">FUTBOL</Link>
-          <Link href="/forma-tasarla/hali-saha-formasi-tasarla">HALI SAHA</Link>
-          <Link href="/#surec">NASIL ÇALIŞIR?</Link>
-          <Link href="/#recent-posts-title">BLOG</Link>
-        </nav>
-        <a className={styles.headerWhatsapp} href={whatsappUrl} target="_blank" rel="noopener noreferrer">WHATSAPP</a>
-      </div>
-    </header>
+    <SiteHeader />
 
     <main className={styles.page}>
       <nav className={`${styles.breadcrumb} container-wide`} aria-label="Sayfa yolu">
