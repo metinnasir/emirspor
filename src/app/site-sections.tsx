@@ -9,7 +9,7 @@ export function SiteHeader() {
     <div className="header-nav container-wide">
       <Link className="brand nav-brand" href="/" aria-label="Emir Spor ana sayfa"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={144} height={42} priority /></Link>
       <nav aria-label="Ana menü">
-        <Link href="/#urunler">FUTBOL</Link><Link href="/#urunler">BASKETBOL</Link><Link href="/#urunler">VOLEYBOL</Link><Link href="/#urunler">EŞOFMAN</Link><Link href="/#recent-posts-title">BLOG</Link>
+        <Link href="/kategori/futbol-formalari">FUTBOL</Link><Link href="/#urunler">BASKETBOL</Link><Link href="/#urunler">VOLEYBOL</Link><Link href="/#urunler">EŞOFMAN</Link><Link href="/#recent-posts-title">BLOG</Link>
         <details className="design-menu">
           <summary className="design-trigger">FORMA TASARLA</summary>
           <div className="design-dropdown">
