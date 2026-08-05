@@ -37,6 +37,24 @@ const featuredCategories = [
   },
 ];
 
+const customerPhotos = [
+  "Mor formalarıyla sahadaki genç futbol takımı",
+  "Mavi siyah formalarıyla halı saha takımı",
+  "Kişiye özel isimli formasını teslim alan oyuncu",
+  "Yeşil beyaz formalarıyla takım soyunma odasında",
+  "Siyah beyaz formalarıyla genç futbol takımı",
+  "Kırmızı lacivert formalarıyla takım buluşması",
+  "Yeşil beyaz formalarıyla sahaya çıkan oyuncular",
+  "Beyaz yeşil formalarıyla halı saha takımı",
+  "Siyah beyaz formalarıyla çocuk futbol takımı",
+  "Siyah beyaz formalarıyla sahadaki genç takım",
+  "Üretimi tamamlanan yeşil takım formaları",
+  "Pembe beyaz özel tasarım okul forması",
+  "Üretimi tamamlanan petrol yeşili takım forması",
+  "Paketlenen mor beyaz takım formaları",
+  "Üretimi tamamlanan kırmızı yeşil takım forması",
+];
+
 export default function Home() {
   const schema = {
     "@context": "https://schema.org",
@@ -253,11 +271,15 @@ export default function Home() {
           <p>Emir Spor formalarıyla sahaya çıkan takımlarımızdan kareler.</p>
         </div>
         <div className="customer-gallery-grid container-wide">
-          {Array.from({ length: 15 }, (_, index) => (
-            <div className="customer-gallery-slot" key={index} aria-label={`Müşteri fotoğrafı ${index + 1} için ayrılmış alan`}>
-              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h8l3-4h10l3 4h8a4 4 0 0 1 4 4v25a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Zm16 9a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z" /></svg>
-              <span>FOTOĞRAF {String(index + 1).padStart(2, "0")}</span>
-            </div>
+          {customerPhotos.map((alt, index) => (
+            <figure className="customer-gallery-photo" key={alt}>
+              <Image
+                src={`/portfolyo/musteriler/${String(index + 1).padStart(2, "0")}.webp`}
+                alt={alt}
+                fill
+                sizes="(max-width: 560px) 50vw, (max-width: 900px) 33vw, 20vw"
+              />
+            </figure>
           ))}
         </div>
       </section>
