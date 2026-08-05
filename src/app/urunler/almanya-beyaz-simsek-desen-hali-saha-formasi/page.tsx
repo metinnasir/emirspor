@@ -74,12 +74,6 @@ export default function ProductPage() {
           <figure className={`${styles.productPhoto} ${styles.mainPhoto}`}>
             <Image src={productImage} alt={`${productName} forma, şort ve çorap takımı`} fill priority sizes="(max-width: 900px) 100vw, 55vw" />
           </figure>
-          <figure className={`${styles.productPhoto} ${styles.detailFront}`}>
-            <Image src={productImage} alt="Almanya şimşek desen formasının ön görünümü" fill sizes="(max-width: 900px) 50vw, 27vw" />
-          </figure>
-          <figure className={`${styles.productPhoto} ${styles.detailBack}`}>
-            <Image src={productImage} alt="İsim ve numara baskılı forma ile şort detayı" fill sizes="(max-width: 900px) 50vw, 27vw" />
-          </figure>
         </div>
 
         <div className={styles.summary}>
@@ -87,16 +81,6 @@ export default function ProductPage() {
           <h1>{productName}</h1>
           <div className={styles.price}>450 TL <small>/ ADET</small></div>
           <p className={styles.shortDescription}>Beyaz zemin üzerine siyah, kırmızı ve sarı şimşek detaylarıyla tasarlanan bu model; takımınıza özel isim, numara, logo ve sponsor baskılarıyla üretilir.</p>
-
-          <div className={styles.included}>
-            <strong>Fiyata dahil olanlar</strong>
-            <ul><li>Forma ve şort takımı</li><li>Oyuncu ismi ve numarası</li><li>Takım logosu ve sponsor baskıları</li><li>Tasarım desteği</li></ul>
-          </div>
-
-          <div className={styles.sizeBlock}>
-            <span>Beden seçenekleri</span>
-            <div><b>XS</b><b>S</b><b>M</b><b>L</b><b>XL</b><b>2XL</b></div>
-          </div>
 
           <a className={styles.whatsappButton} href={whatsappUrl} target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3A12.87 12.87 0 0 0 5 22.49L3.28 29l6.67-1.75A12.96 12.96 0 1 0 16.04 3Zm0 23.58a10.7 10.7 0 0 1-5.46-1.49l-.39-.23-3.96 1.04 1.06-3.86-.25-.4a10.66 10.66 0 1 1 9 4.94Zm5.85-7.99c-.32-.16-1.9-.94-2.2-1.05-.29-.11-.5-.16-.71.16-.21.32-.82 1.05-1 1.26-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59a9.62 9.62 0 0 1-1.78-2.21c-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.72-.98-2.35-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.64 0 1.56 1.14 3.07 1.3 3.28.16.21 2.24 3.42 5.42 4.79.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.9-.77 2.17-1.52.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z" /></svg>
