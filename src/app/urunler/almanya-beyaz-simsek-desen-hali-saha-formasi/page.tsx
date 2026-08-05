@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import styles from "./product.module.css";
+import { CollectionCampaign, SiteFooter } from "../../site-sections";
 
 const productName = "Almanya Beyaz Şimşek Desen Halı Saha Forması";
 const productUrl = "https://emirspor.com/urunler/almanya-beyaz-simsek-desen-hali-saha-formasi";
@@ -160,8 +161,7 @@ export default function ProductPage() {
       </section>
     </main>
 
-    <footer className={styles.footer}>
-      <div className="container-wide"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={170} height={50} /><p>Takımınıza özel halı saha forması tasarımı ve üretimi.</p><Link href="/">ANA SAYFAYA DÖN</Link></div>
-    </footer>
+    <CollectionCampaign orderHref={whatsappUrl} />
+    <SiteFooter />
   </>;
 }

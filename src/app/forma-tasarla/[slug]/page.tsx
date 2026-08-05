@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { SiteFooter } from "../../site-sections";
 
 const pages = {
   "futbol-formasi-tasarla": { title: "Futbol Forması Tasarla", intro: "Kulübünüzün renklerini, logosunu ve sahadaki kimliğini yansıtan özel futbol forması tasarım süreci." },
@@ -29,8 +30,11 @@ export default async function DesignLandingPage({ params }: { params: Promise<{ 
   const { slug } = await params;
   const page = pages[slug as PageSlug];
   if (!page) notFound();
-  return <main className="editorial-placeholder">
-    <Link href="/" className="back-home">← EMİR SPOR</Link>
-    <div><p className="kicker orange">FORMA TASARLA REHBERİ</p><h1>{page.title}</h1><p>{page.intro}</p><p className="preparing-note">Bu tanıtım sayfası için özgün görseller, ayrıntılı anlatımlar ve SEO içeriği hazırlanacaktır.</p><a className="solid-button" href="https://wa.me/905444407767?text=Merhaba%2C%20tak%C4%B1m%C4%B1ma%20%C3%B6zel%20forma%20tasarlamak%20istiyorum">TASARIMA BAŞLA</a></div>
-  </main>;
+  return <>
+    <main className="editorial-placeholder">
+      <Link href="/" className="back-home">← EMİR SPOR</Link>
+      <div><p className="kicker orange">FORMA TASARLA REHBERİ</p><h1>{page.title}</h1><p>{page.intro}</p><p className="preparing-note">Bu tanıtım sayfası için özgün görseller, ayrıntılı anlatımlar ve SEO içeriği hazırlanacaktır.</p><a className="solid-button" href="https://wa.me/905444407767?text=Merhaba%2C%20tak%C4%B1m%C4%B1ma%20%C3%B6zel%20forma%20tasarlamak%20istiyorum">TASARIMA BAŞLA</a></div>
+    </main>
+    <SiteFooter />
+  </>;
 }
