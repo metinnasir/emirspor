@@ -96,26 +96,55 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className={`${styles.details} container-wide`}>
-        <div className={styles.detailsIntro}>
-          <p>ÜRÜN DETAYLARI</p>
-          <h2>Sahada hafif, görünümde güçlü.</h2>
-          <p>Almanya şimşek desen halı saha forması, takım bütünlüğünü öne çıkaran modern grafik yapısı ve maç boyunca konfor sunan spor kumaşıyla hazırlanır.</p>
+      <section className={`${styles.productDetails} container-wide`} aria-labelledby="product-details-title">
+        <div className={styles.productDetailsHeading}>
+          <p>ÜRÜN BİLGİLERİ</p>
+          <h2 id="product-details-title">Ürün Detayları</h2>
         </div>
-        <div className={styles.accordions}>
-          <details open><summary>Ürün açıklaması</summary><p>Forma ve şorttan oluşan takım, kulübünüzün renklerine göre uyarlanabilir. Oyuncu isimleri, numaralar, takım arması ve sponsor logoları tasarıma dahil edilir.</p></details>
-          <details><summary>Kumaş ve baskı özellikleri</summary><p>Nefes alan, hafif ve hızlı kuruyan polyester spor kumaşı kullanılır. Sublimasyon baskı kumaşın dokusuna işlendiği için çatlama, soyulma ve renk atması yapmaz.</p></details>
-          <details><summary>Sipariş ve üretim süreci</summary><p>Detaylar alındıktan sonra dijital tasarım hazırlanır. Onayınızın ardından bedenlere göre üretim, kalite kontrol ve teslimat süreci başlatılır.</p></details>
-          <details><summary>Beden ve takım adedi</summary><p>Çocuk ve yetişkin bedenleri hazırlanabilir. Takım adedi ve özel ölçü talepleri için WhatsApp üzerinden bilgi alabilirsiniz.</p></details>
+        <div className={styles.productDetailsGrid}>
+          <article><span>01</span><h3>Tasarıma Özel Üretim</h3><p>Forma ve şort takımı; kulüp renkleri, oyuncu isimleri, numaralar, takım arması ve sponsor logolarıyla size özel hazırlanır.</p></article>
+          <article><span>02</span><h3>Kumaş ve Baskı</h3><p>Nefes alan, hafif ve hızlı kuruyan spor kumaşı kullanılır. Sublimasyon baskı çatlama, soyulma ve renk atmasına karşı dayanıklıdır.</p></article>
+          <article><span>03</span><h3>Sipariş ve Üretim</h3><p>Takım detayları alındıktan sonra dijital tasarım hazırlanır. Tasarım onayınızın ardından üretim ve kalite kontrol süreci başlar.</p></article>
+          <article><span>04</span><h3>Beden ve Takım Adedi</h3><p>Çocuk ve yetişkin bedenleri üretilebilir. Takım adedi, beden listesi ve özel ölçü talepleri sipariş öncesinde netleştirilir.</p></article>
         </div>
       </section>
 
-      <section className={styles.seoContent}>
+      <section className={styles.productDescription} aria-labelledby="product-description-title">
         <div className="container-wide">
-          <h2>Almanya Şimşek Desenli Halı Saha Forması Yaptırma</h2>
-          <div>
-            <p>Takımınız için dikkat çekici ve profesyonel bir görünüm arıyorsanız Almanya beyaz şimşek desenli halı saha forması, güçlü renk kontrastı ve kişiselleştirilebilir yapısıyla ideal bir seçenektir. Model; amatör futbol takımları, şirket turnuvaları, okul ekipleri ve düzenli halı saha grupları için takım halinde üretilir.</p>
-            <p>Her oyuncu için farklı isim, numara ve beden uygulanabilir. Takım logosu ile sponsor baskıları tasarıma ücret eklenmeden yerleştirilebilir. Sipariş öncesinde hazırlanan dijital forma tasarımını onayladıktan sonra üretime geçilir.</p>
+          <p className={styles.descriptionEyebrow}>DETAYLI ÜRÜN AÇIKLAMASI</p>
+          <h2 id="product-description-title">Almanya Şimşek Desenli Halı Saha Forması Yaptırma</h2>
+          <p className={styles.descriptionLead}>Takımınızın sahada tek bir kimlikle görünmesini sağlayan Almanya beyaz şimşek desenli halı saha forması; modern çizgileri, kişiselleştirilebilir baskıları ve maç boyunca konfor sunan kumaş yapısıyla takım siparişleri için hazırlanır.</p>
+
+          <div className={styles.descriptionColumns}>
+            <article>
+              <h3>Takımınıza Özel Halı Saha Forması</h3>
+              <p>Bu model beyaz zemin üzerine siyah, kırmızı ve sarı geçişlerle oluşturulan dinamik bir tasarıma sahiptir. Amatör futbol takımları, arkadaş grupları, okul ekipleri, şirket turnuvaları ve düzenli maç yapan kulüpler için üretilebilir. Hazır bir modeli doğrudan kullanabilir veya renkleri takım kimliğinize göre değiştirebilirsiniz.</p>
+              <p>Profesyonel görünümlü bir <Link href="/forma-tasarla/hali-saha-formasi-tasarla">halı saha forması</Link> için takım arması, oyuncu ismi, forma numarası ve sponsor logoları tasarım üzerinde dengeli biçimde konumlandırılır. Böylece bütün oyuncular aynı görsel dili taşırken her forma kişiye özel bilgilerle hazırlanır.</p>
+            </article>
+
+            <article>
+              <h3>Forma Yaptırma Süreci Nasıl İlerler?</h3>
+              <p><Link href="/forma-tasarla/takim-formasi-tasarla">Forma yaptırma</Link> süreci takım adedi, renk tercihleri, beden listesi, logo dosyaları ve teslim tarihi bilgilerinin paylaşılmasıyla başlar. Bu bilgiler doğrultusunda dijital ön çalışma hazırlanır ve üretime geçilmeden önce takım yetkilisinin onayına sunulur.</p>
+              <p>Onaylanan tasarım oyuncu bedenlerine göre üretim planına alınır. Baskı, dikim ve kalite kontrol aşamalarının ardından formalar teslimata hazırlanır. İsim ve numaraların doğru eşleşmesi için sipariş listesinin üretim öncesinde kontrol edilmesi önemlidir.</p>
+            </article>
+
+            <article>
+              <h3>Forma Tasarla: Renk, Logo ve Baskı Seçenekleri</h3>
+              <p>Kendi takımınız için <Link href="/forma-tasarla/futbol-formasi-tasarla">forma tasarla</Link> seçeneğini kullanırken ana renk, yardımcı renk, desen yoğunluğu, yaka biçimi ve kol detayları değiştirilebilir. Takım logosunun yanında lig, turnuva veya sponsor logoları da tasarıma eklenebilir.</p>
+              <p>Sublimasyon baskı tekniğinde renk ve desen kumaşın yapısına işlendiği için baskı yüzeyde ağırlık oluşturmaz. Bu yöntem özellikle çok renkli, degrade geçişli ve şimşek desenli futbol formalarında daha özgür bir tasarım alanı sağlar.</p>
+            </article>
+
+            <article>
+              <h3>Konforlu Kumaş ve Uzun Ömürlü Kullanım</h3>
+              <p>Hafif polyester spor kumaşı hareket sırasında vücudun rahat kalmasına yardımcı olur. Nefes alan doku ve hızlı kuruma özelliği, yoğun maç temposunda formanın ağırlaşmasını azaltır. Kumaş seçimi çocuk ve yetişkin takımları için kullanım ihtiyacına göre planlanabilir.</p>
+              <p>Formaların kullanım ömrünü korumak için düşük sıcaklıkta, ters çevrilerek yıkanması ve doğrudan yüksek ısı uygulanmaması önerilir. Bütçe odaklı alternatifler için <Link href="/forma-tasarla/ucuz-forma-tasarla">ucuz forma tasarla</Link> sayfamızı da inceleyebilirsiniz.</p>
+            </article>
+          </div>
+
+          <div className={styles.descriptionCta}>
+            <h3>Almanya Şimşek Desenli Formayı Takımınıza Uyarlayalım</h3>
+            <p>Takım adedinizi, beden listenizi ve renk tercihlerinizi paylaşın; dijital forma tasarımınızı hazırlayalım.</p>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">WHATSAPP&apos;TAN BİLGİ AL</a>
           </div>
         </div>
       </section>
