@@ -16,7 +16,7 @@ const pages = {
 type PageSlug = keyof typeof pages;
 
 export function generateStaticParams() {
-  return Object.keys(pages).map((slug) => ({ slug }));
+  return Object.keys(pages).filter((slug) => slug !== "futbol-formasi-tasarla").map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
