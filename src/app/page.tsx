@@ -245,6 +245,22 @@ export default function Home() {
         <a className="promo promo-two" href="#urunler"><span>KULÜBÜNE ÖZEL</span><strong>SIFIRDAN TASARIM</strong><em>DETAYLAR →</em></a>
         <a className="promo promo-three" href="#surec"><span>TAKIM PAKETİ</span><strong>FORMA + ŞORT</strong><em>SÜRECİ GÖR →</em></a>
       </section>
+
+      <section className="customer-gallery" aria-labelledby="customer-gallery-title">
+        <div className="customer-gallery-heading container-wide">
+          <p className="kicker orange">GERÇEK TAKIMLAR · GERÇEK FORMALAR</p>
+          <h2 id="customer-gallery-title">Sizden Gelenler</h2>
+          <p>Emir Spor formalarıyla sahaya çıkan takımlarımızdan kareler.</p>
+        </div>
+        <div className="customer-gallery-grid container-wide">
+          {Array.from({ length: 15 }, (_, index) => (
+            <div className="customer-gallery-slot" key={index} aria-label={`Müşteri fotoğrafı ${index + 1} için ayrılmış alan`}>
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h8l3-4h10l3 4h8a4 4 0 0 1 4 4v25a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Zm16 9a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z" /></svg>
+              <span>FOTOĞRAF {String(index + 1).padStart(2, "0")}</span>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
 
     <footer><div className="footer-main container-wide"><a className="brand footer-brand" href="#"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={192} height={56} /></a><p>Özel futbol forması ve takım sporları üretimi.</p><div><a href="#urunler">FORMALAR</a><a href="#surec">ÜRETİM</a><a href="#iletisim">İLETİŞİM</a></div></div><div className="footer-bottom container-wide">© {new Date().getFullYear()} EMİR SPOR · TÜM HAKLARI SAKLIDIR</div></footer>
