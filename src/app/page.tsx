@@ -333,6 +333,44 @@ export default function Home() {
       </section>
     </main>
 
-    <footer><div className="footer-main container-wide"><a className="brand footer-brand" href="#"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor" width={192} height={56} /></a><p>Özel futbol forması ve takım sporları üretimi.</p><div><a href="#urunler">FORMALAR</a><a href="#surec">ÜRETİM</a><a href="#iletisim">İLETİŞİM</a></div></div><div className="footer-bottom container-wide">© {new Date().getFullYear()} EMİR SPOR · TÜM HAKLARI SAKLIDIR</div></footer>
+    <footer className="site-footer">
+      <div className="footer-main container-wide">
+        <div className="footer-about">
+          <a className="brand footer-brand" href="#"><Image src="/portfolyo/logo/emirspor-logo.png" alt="Emir Spor forma üreticisi" width={192} height={56} /></a>
+          <p>Emir Spor; halı saha forması, futbol forması ve takımlara özel sublimasyon forma tasarımı ve üretimi yapar.</p>
+          <a className="footer-whatsapp" href="https://wa.me/905444407767?text=Merhaba%20sipari%C5%9F%20vermek%20istiyorum" target="_blank" rel="noopener noreferrer">0544 440 77 67</a>
+        </div>
+
+        <nav className="footer-column" aria-label="Ürün kategorileri">
+          <h2>Ürün Kategorileri</h2>
+          <Link href="/forma-tasarla/futbol-formasi-tasarla">Futbol Forması</Link>
+          <Link href="/forma-tasarla/hali-saha-formasi-tasarla">Halı Saha Forması</Link>
+          <Link href="/forma-tasarla/basketbol-formasi-tasarla">Basketbol Forması</Link>
+          <Link href="/forma-tasarla/voleybol-formasi-tasarla">Voleybol Forması</Link>
+          <Link href="/forma-tasarla/takim-formasi-tasarla">Takım Forması</Link>
+        </nav>
+
+        <nav className="footer-column" aria-label="Önemli sayfalar">
+          <h2>Sayfalar</h2>
+          <a href="#urunler">Yeni Ürünler</a>
+          <a href="#surec">Nasıl Çalışır?</a>
+          <a href="#kategoriler">Forma Modelleri</a>
+          <Link href="/forma-tasarla/ucuz-forma-tasarla">Ucuz Forma Tasarla</Link>
+          <Link href="/forma-tasarla/isimli-forma-tasarla">İsimli Forma Tasarla</Link>
+        </nav>
+
+        <nav className="footer-column" aria-label="Kurumsal bağlantılar">
+          <h2>Kurumsal</h2>
+          <a href="#">Hakkımızda</a>
+          <a href="#iletisim">İletişim</a>
+          <a href="#surec">Üretim Süreci</a>
+          <a href="#customer-gallery-title">Sizden Gelenler</a>
+          <a href="#recent-posts-title">Blog Yazıları</a>
+        </nav>
+      </div>
+      <div className="footer-bottom-wrap">
+        <div className="footer-bottom container-wide">© {new Date().getFullYear()} EMİR SPOR · TÜM HAKLARI SAKLIDIR</div>
+      </div>
+    </footer>
   </>;
 }
