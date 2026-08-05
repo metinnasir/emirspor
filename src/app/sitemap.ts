@@ -1,6 +1,13 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const designPages = [
+    "basketbol-formasi-tasarla", "voleybol-formasi-tasarla", "takim-formasi-tasarla",
+    "hali-saha-formasi-tasarla", "ucuz-forma-tasarla", "isimli-forma-tasarla",
+    "espor-formasi-tasarla", "asker-formasi-tasarla", "tezkere-formasi-tasarla",
+    "kaleci-formasi-tasarla", "taraftar-formasi-tasarla", "tenis-formasi-tasarla",
+    "bowling-formasi-tasarla",
+  ];
   return [
     { url: "https://emirspor.com", lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
     { url: "https://emirspor.com/blog", lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
@@ -22,5 +29,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    ...designPages.map((slug) => ({
+      url: `https://emirspor.com/forma-tasarla/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
   ];
 }
