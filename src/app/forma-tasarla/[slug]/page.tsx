@@ -11,6 +11,13 @@ const pages = {
   "hali-saha-formasi-tasarla": { title: "Halı Saha Forması Tasarla", intro: "Halı saha ekipleri için isim, numara, logo ve sponsor baskılı özgün forma tasarım çözümleri." },
   "ucuz-forma-tasarla": { title: "Ucuz Forma Tasarla", intro: "Bütçeyi korurken kumaş, baskı ve kullanım kalitesinden vazgeçmeden forma hazırlamanın yolları." },
   "isimli-forma-tasarla": { title: "İsimli Forma Tasarla", intro: "Her oyuncuya özel isim ve numara seçenekleriyle kişiselleştirilmiş takım forması tasarımı." },
+  "espor-formasi-tasarla": { title: "Espor Forması Tasarla", intro: "Espor takımları, oyuncu toplulukları ve turnuva ekipleri için takım kimliğini yansıtan kişiselleştirilmiş forma tasarımları." },
+  "asker-formasi-tasarla": { title: "Asker Forması Tasarla", intro: "Asker uğurlaması ve hatıra organizasyonları için isim, tertip, dönem ve özel mesajlarla kişiselleştirilen forma tasarımları." },
+  "tezkere-formasi-tasarla": { title: "Tezkere Forması Tasarla", intro: "Terhis ve tezkere hatırası için dönem, birlik, isim ve kişisel detaylarla hazırlanan özgün forma tasarımları." },
+  "kaleci-formasi-tasarla": { title: "Kaleci Forması Tasarla", intro: "Kalecilerin sahada ayrışmasını sağlayan renk, desen, isim ve numara seçenekleriyle özel kaleci forması tasarımı." },
+  "taraftar-formasi-tasarla": { title: "Taraftar Forması Tasarla", intro: "Takım sevgisini tribünde ve günlük yaşamda taşımak isteyen gruplar için kişiselleştirilmiş taraftar formaları." },
+  "tenis-formasi-tasarla": { title: "Tenis Forması Tasarla", intro: "Bireysel sporcular, kulüpler ve tenis akademileri için hareket özgürlüğü sunan özel spor giyim tasarımları." },
+  "bowling-formasi-tasarla": { title: "Bowling Forması Tasarla", intro: "Bowling takımları, lig oyuncuları ve kurumsal turnuvalar için isim ve logo baskılı özel forma tasarımları." },
 } as const;
 
 type PageSlug = keyof typeof pages;

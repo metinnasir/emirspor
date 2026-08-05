@@ -20,6 +20,13 @@ export function SiteHeader() {
             <Link href="/forma-tasarla/hali-saha-formasi-tasarla">Halı Saha Forması Tasarla</Link>
             <Link href="/forma-tasarla/ucuz-forma-tasarla">Ucuz Forma Tasarla</Link>
             <Link href="/forma-tasarla/isimli-forma-tasarla">İsimli Forma Tasarla</Link>
+            <Link href="/forma-tasarla/espor-formasi-tasarla">Espor Forması Tasarla</Link>
+            <Link href="/forma-tasarla/asker-formasi-tasarla">Asker Forması Tasarla</Link>
+            <Link href="/forma-tasarla/tezkere-formasi-tasarla">Tezkere Forması Tasarla</Link>
+            <Link href="/forma-tasarla/kaleci-formasi-tasarla">Kaleci Forması Tasarla</Link>
+            <Link href="/forma-tasarla/taraftar-formasi-tasarla">Taraftar Forması Tasarla</Link>
+            <Link href="/forma-tasarla/tenis-formasi-tasarla">Tenis Forması Tasarla</Link>
+            <Link href="/forma-tasarla/bowling-formasi-tasarla">Bowling Forması Tasarla</Link>
           </div>
         </details>
       </nav>
