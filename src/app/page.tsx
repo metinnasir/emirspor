@@ -207,9 +207,11 @@ export default function Home() {
         <div className="product-grid container-wide">
           {products.map((product, index) => <article className="product" key={product.name}>
             {product.image ? (
-              <div className="product-image-stage">
-                <Image src={product.image} alt={product.name} width={1369} height={1542} sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" />
-              </div>
+              <Link href="/urunler/almanya-beyaz-simsek-desen-hali-saha-formasi" aria-label={`${product.name} ürün sayfasını aç`}>
+                <div className="product-image-stage">
+                  <Image src={product.image} alt={product.name} width={1369} height={1542} sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" />
+                </div>
+              </Link>
             ) : (
               <div className={`jersey-stage ${product.tone}`}>
                 <span className="product-number">0{index + 1}</span>
