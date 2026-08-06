@@ -117,7 +117,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <section className={`${styles.faqSection} container-wide`} aria-labelledby="product-faq-title"><p className={styles.descriptionEyebrow}>SIK SORULAN SORULAR</p><h2 id="product-faq-title">Halısaha Forması Tasarla: Sık Sorulan Sorular</h2><div>{faq.map(([question, answer]) => <article key={question}><h3>{question}</h3><p>{answer}</p></article>)}</div></section>
 
       <section className={`${styles.related} container-wide`}><div className={styles.relatedHeading}><p>BENZER MODELLER</p><h2>Bunları da inceleyin</h2></div>
-        <div className={styles.relatedGrid}>{related.map((item) => <article key={item.slug}><Link href={`/urunler/${item.slug}`} title={`${item.name} ürün sayfasını inceleyin`}><div><Image src={item.image} alt={`${item.name} forma, şort ve çorap seti`} title={`${item.name} halısaha forması`} fill sizes="(max-width: 600px) 100vw, 33vw" /></div><h3>{item.name}</h3><span>{item.price} TL</span></Link></article>)}</div>
+        <div className={styles.relatedGrid}>{related.map((item) => <article key={item.slug}><Link href={`/urunler/${item.slug}`} title={`${item.name} ürün sayfasını inceleyin`}><div style={{ position: "relative", aspectRatio: "1 / 1", overflow: "hidden", background: "#eee" }}><Image src={item.image} alt={`${item.name} forma, şort ve çorap seti`} title={`${item.name} halısaha forması`} fill sizes="(max-width: 600px) 100vw, 33vw" /></div><h3>{item.name}</h3><span>{item.price} TL</span></Link></article>)}</div>
       </section>
     </main>
     <CollectionCampaign orderHref={whatsappUrl} productImage={product.image} productName={product.name} /><SiteFooter />
