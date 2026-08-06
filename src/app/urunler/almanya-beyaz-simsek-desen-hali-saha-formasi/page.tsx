@@ -24,12 +24,6 @@ export const metadata: Metadata = {
   },
 };
 
-const relatedProducts = [
-  { name: "Bordo Beyaz Özel Tasarım Forma", image: "/urunler/slider/hali-saha-formasi-slide-model-1.png" },
-  { name: "Petrol Yeşili Dalga Desen Forma", image: "/urunler/slider/hali-saha-formasi-slide-model-2.png" },
-  { name: "Kırmızı Lacivert Maç Forması", image: "/urunler/slider/hali-saha-formasi-slide-model-3.png" },
-];
-
 const productTags = ["halısaha forması tasarla", "forma yaptırma", "futbol forması", "beyaz şimşek desen forma", "takım forması"];
 const faq = [
   ["Almanya şimşek desen forma renkleri değiştirilebilir mi?", "Evet. Modelin ana ve yardımcı renkleri takım kimliğinize göre yeniden düzenlenebilir."],
@@ -166,15 +160,6 @@ export default function ProductPage() {
 
       <section className={`${styles.faqSection} container-wide`} aria-labelledby="product-faq-title"><p className={styles.descriptionEyebrow}>SIK SORULAN SORULAR</p><h2 id="product-faq-title">Halısaha Forması Tasarla: Sık Sorulan Sorular</h2><div>{faq.map(([question, answer]) => <article key={question}><h3>{question}</h3><p>{answer}</p></article>)}</div></section>
 
-      <section className={`${styles.related} container-wide`}>
-        <div className={styles.relatedHeading}><p>BENZER MODELLER</p><h2>Bunları da inceleyin</h2></div>
-        <div className={styles.relatedGrid}>
-          {relatedProducts.map((product) => <article key={product.name}>
-            <div><Image src={product.image} alt={`${product.name} halısaha forması modeli`} title={product.name} fill sizes="(max-width: 600px) 100vw, 33vw" /></div>
-            <h3>{product.name}</h3><span>450 TL</span>
-          </article>)}
-        </div>
-      </section>
     </main>
 
     <CollectionCampaign orderHref={whatsappUrl} productImage={productImage} productName={productName} />

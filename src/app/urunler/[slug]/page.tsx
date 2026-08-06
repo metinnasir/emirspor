@@ -4,7 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import { CollectionCampaign, SiteFooter, SiteHeader } from "../../site-sections";
-import { catalogProducts, footballProducts } from "../../product-data";
+import { footballProducts } from "../../product-data";
 import styles from "../almanya-beyaz-simsek-desen-hali-saha-formasi/product.module.css";
 
 const baseUrl = "https://emirspor.com";
@@ -34,7 +34,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!product) notFound();
   const productUrl = `${baseUrl}/urunler/${slug}`;
   const whatsappUrl = `https://wa.me/905444407767?text=${encodeURIComponent(`Merhaba, ${product.name} hakkında sipariş vermek istiyorum`)}`;
-  const related = catalogProducts.filter((item) => item.slug !== slug).slice(0, 3);
   const description = `${product.name}; ${product.colors} renkleriyle hazırlanan, isim, numara, takım arması ve sponsor baskıları kişiselleştirilebilen özel halısaha forması modelidir.`;
   const productTags = ["halısaha forması tasarla", "forma yaptırma", "futbol forması", "takım forması", `${product.colors} forma`, product.name];
   const faq = [
@@ -116,9 +115,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       <section className={`${styles.faqSection} container-wide`} aria-labelledby="product-faq-title"><p className={styles.descriptionEyebrow}>SIK SORULAN SORULAR</p><h2 id="product-faq-title">Halısaha Forması Tasarla: Sık Sorulan Sorular</h2><div>{faq.map(([question, answer]) => <article key={question}><h3>{question}</h3><p>{answer}</p></article>)}</div></section>
 
-      <section className={`${styles.related} container-wide`}><div className={styles.relatedHeading}><p>BENZER MODELLER</p><h2>Bunları da inceleyin</h2></div>
-        <div className={styles.relatedGrid}>{related.map((item) => <article key={item.slug}><Link href={`/urunler/${item.slug}`} title={`${item.name} ürün sayfasını inceleyin`}><div style={{ position: "relative", aspectRatio: "1 / 1", overflow: "hidden", background: "#eee" }}><Image src={item.image} alt={`${item.name} forma, şort ve çorap seti`} title={`${item.name} halısaha forması`} fill sizes="(max-width: 600px) 100vw, 33vw" /></div><h3>{item.name}</h3><span>{item.price} TL</span></Link></article>)}</div>
-      </section>
     </main>
     <CollectionCampaign orderHref={whatsappUrl} productImage={product.image} productName={product.name} /><SiteFooter />
   </>;
