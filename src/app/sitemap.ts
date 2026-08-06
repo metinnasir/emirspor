@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { footballProducts } from "./product-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const designPages = [
@@ -34,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.85,
+    })),
+    ...footballProducts.map((product) => ({
+      url: `https://emirspor.com/urunler/${product.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
     })),
   ];
 }

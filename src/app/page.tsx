@@ -4,18 +4,9 @@ import Link from "next/link";
 import { CollectionCampaign, SiteFooter, SiteHeader } from "./site-sections";
 import HeroSlider from "./hero-slider";
 import BrandCarousel from "./brand-carousel";
+import { footballProducts } from "./product-data";
 
-const products = [
-  { name: "Almanya Beyaz Şimşek Desen Halı Saha Forması", tone: "navy", image: "/urunler/almanya-beyaz-simsek-desen-hali-saha-formasi.png", price: "450 TL" },
-  { name: "Saha Ateşi", tone: "orange" },
-  { name: "Beyaz Deplasman", tone: "white" },
-  { name: "Elektrik Mavisi", tone: "blue" },
-  { name: "Şampiyon Siyah", tone: "navy" },
-  { name: "Turuncu Dinamo", tone: "orange" },
-  { name: "Buz Beyazı", tone: "white" },
-  { name: "Mavi Fırtına", tone: "blue" },
-  { name: "Gece Kartalı", tone: "navy" },
-];
+const products = footballProducts.slice(0, 9);
 
 const featuredCategories = [
   {
@@ -160,21 +151,14 @@ export default function Home() {
           <p>En çok tercih edilen halı saha forma modelleri.</p>
         </div>
         <div className="product-grid container-wide">
-          {products.map((product, index) => <article className="product" key={product.name}>
-            {product.image ? (
-              <Link href="/urunler/almanya-beyaz-simsek-desen-hali-saha-formasi" aria-label={`${product.name} ürün sayfasını aç`}>
-                <div className="product-image-stage">
-                  <Image src={product.image} alt={product.name} width={1369} height={1542} sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" />
-                </div>
-              </Link>
-            ) : (
-              <div className={`jersey-stage ${product.tone}`}>
-                <span className="product-number">0{index + 1}</span>
-                <div className="jersey"><span>EMİR<br />SPOR</span></div>
+          {products.map((product) => <article className="product" key={product.name}>
+            <Link href={`/urunler/${product.slug}`} aria-label={`${product.name} ürün sayfasını aç`}>
+              <div className="product-image-stage">
+                <Image src={product.image} alt={product.name} title={product.name} width={1369} height={1540} sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" />
               </div>
-            )}
+            </Link>
             <h3>{product.name}</h3>
-            <span className="product-price">{product.price ?? "450 TL"}</span>
+            <span className="product-price">{product.price} TL</span>
           </article>)}
         </div>
       </section>
