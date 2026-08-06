@@ -120,6 +120,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <div className={styles.relatedGrid}>{related.map((item) => <article key={item.slug}><Link href={`/urunler/${item.slug}`} title={`${item.name} ürün sayfasını inceleyin`}><div><Image src={item.image} alt={`${item.name} forma, şort ve çorap seti`} title={`${item.name} halısaha forması`} fill sizes="(max-width: 600px) 100vw, 33vw" /></div><h3>{item.name}</h3><span>{item.price} TL</span></Link></article>)}</div>
       </section>
     </main>
-    <CollectionCampaign orderHref={whatsappUrl} /><SiteFooter />
+    <CollectionCampaign orderHref={whatsappUrl} productImage={product.image} productName={product.name} /><SiteFooter />
   </>;
 }

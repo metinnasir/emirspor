@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { footballProducts } from "./product-data";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const designPages = [
     "basketbol-formasi-tasarla", "voleybol-formasi-tasarla", "takim-formasi-tasarla",

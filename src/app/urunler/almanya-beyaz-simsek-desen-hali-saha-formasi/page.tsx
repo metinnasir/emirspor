@@ -177,7 +177,7 @@ export default function ProductPage() {
       </section>
     </main>
 
-    <CollectionCampaign orderHref={whatsappUrl} />
+    <CollectionCampaign orderHref={whatsappUrl} productImage={productImage} productName={productName} />
     <SiteFooter />
   </>;
 }

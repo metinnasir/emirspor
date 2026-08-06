@@ -43,12 +43,13 @@ export function SiteHeader() {
   </header>;
 }
 
-export function CollectionCampaign({ orderHref = "https://wa.me/905444407767?text=Merhaba%20sipari%C5%9F%20vermek%20istiyorum" }: { orderHref?: string }) {
+export function CollectionCampaign({ orderHref = "https://wa.me/905444407767?text=Merhaba%20sipari%C5%9F%20vermek%20istiyorum", productImage = "/urunler/slider/hali-saha-formasi-slide-model-1.png", productName = "Özel tasarım halı saha forması" }: { orderHref?: string; productImage?: string; productName?: string }) {
   return <section className="collection-campaign" aria-labelledby="collection-campaign-title">
     <div className="collection-campaign-visual">
       <Image
-        src="/urunler/slider/hali-saha-formasi-slide-model-1.png"
-        alt="Özel tasarım halı saha forması kampanyası"
+        src={productImage}
+        alt={`${productName} kampanya görseli`}
+        title={`${productName} için şimdi sipariş verin`}
         width={580}
         height={724}
         sizes="(max-width: 700px) 88vw, 46vw"
