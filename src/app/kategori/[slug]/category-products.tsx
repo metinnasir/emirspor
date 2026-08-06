@@ -38,7 +38,7 @@ export default function CategoryProducts({ products }: { products: Product[] }) 
 
     {visible.length ? <div className={styles.productGrid}>
       {visible.map((product) => <article className={styles.productCard} key={product.id}>
-        <Link className={styles.productImage} href={product.href} aria-label={product.name}><Image src={product.image} alt={product.name} fill sizes="(max-width: 650px) 100vw, (max-width: 950px) 50vw, 33vw" /></Link>
+        <Link className={styles.productImage} href={product.href} aria-label={`${product.name} ürününü inceleyin`} title={`${product.name} ürün sayfası`}><Image src={product.image} alt={`${product.name} halısaha forması, şort ve çorap seti`} title={`${product.name} halısaha forması tasarla modeli`} fill sizes="(max-width: 650px) 100vw, (max-width: 950px) 50vw, 33vw" /></Link>
         <h2><Link href={product.href}>{product.name}</Link></h2>
         <p>{product.price} TL</p>
       </article>)}

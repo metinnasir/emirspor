@@ -17,10 +17,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const product = footballProducts.find((item) => item.slug === slug);
   if (!product) return {};
-  const description = `${product.name}, ${product.colors} renkleriyle takımınıza özel isim, numara, logo ve sponsor baskılı olarak üretilir. Fiyatı ${product.price} TL.`;
+  const description = `${product.name} ile halısaha forması tasarla. ${product.colors} renklerinde; isim, numara, logo ve sponsor baskılı forma yaptırma fiyatı ${product.price} TL.`;
   return {
-    title: `${product.name} | 450 TL`, description,
-    keywords: [product.name, "halısaha forması", "forma yaptırma", "forma tasarla", "futbol forması"],
+    title: `${product.name} | Halısaha Forması Tasarla`, description,
+    keywords: [product.name, "halısaha forması tasarla", "halısaha forması", "forma yaptırma", "forma tasarla", "futbol forması", `${product.colors} forma`],
     alternates: { canonical: `/urunler/${slug}` },
     openGraph: { type: "website", url: `${baseUrl}/urunler/${slug}`, title: product.name, description, images: [{ url: product.image, width: 1369, height: 1540, alt: product.name }] },
     twitter: { card: "summary_large_image", title: product.name, description, images: [product.image] },
@@ -35,16 +35,35 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const productUrl = `${baseUrl}/urunler/${slug}`;
   const whatsappUrl = `https://wa.me/905444407767?text=${encodeURIComponent(`Merhaba, ${product.name} hakkında sipariş vermek istiyorum`)}`;
   const related = catalogProducts.filter((item) => item.slug !== slug).slice(0, 3);
-  const description = `${product.name}; ${product.colors} renkleriyle hazırlanan, isim, numara, takım arması ve sponsor baskıları kişiselleştirilebilen özel futbol forması modelidir.`;
-  const schema = {
-    "@context": "https://schema.org", "@type": "Product", name: product.name,
-    image: [`${baseUrl}${product.image}`], description, sku: `EMS-${slug.toUpperCase().slice(0, 18)}`,
-    brand: { "@type": "Brand", name: "Emir Spor" }, category: "Futbol Formaları",
-    offers: { "@type": "Offer", url: productUrl, priceCurrency: "TRY", price: "450", availability: "https://schema.org/InStock", itemCondition: "https://schema.org/NewCondition" },
-  };
+  const description = `${product.name}; ${product.colors} renkleriyle hazırlanan, isim, numara, takım arması ve sponsor baskıları kişiselleştirilebilen özel halısaha forması modelidir.`;
+  const productTags = ["halısaha forması tasarla", "forma yaptırma", "futbol forması", "takım forması", `${product.colors} forma`, product.name];
+  const faq = [
+    ["Bu halısaha forması takım renklerine göre değiştirilebilir mi?", "Evet. Ana ve yardımcı renkler, üretim uygunluğu kontrol edilerek takım kimliğinize göre düzenlenebilir."],
+    ["İsim, numara, logo ve sponsor baskısı eklenebilir mi?", "Evet. Oyuncu isimleri, numaralar, takım arması ve sponsor logoları dijital tasarımda konumlandırılır."],
+    ["Üretimden önce tasarımı görebilir miyiz?", "Evet. Dijital çalışma ve oyuncu listesi yazılı onayınıza sunulur; onaydan sonra üretime geçilir."],
+  ];
+  const schemas = [
+    { "@context": "https://schema.org", "@type": "Product", name: product.name,
+      image: [{ "@type": "ImageObject", url: `${baseUrl}${product.image}`, width: 1369, height: 1540, caption: `${product.name} forma, şort ve çorap seti` }],
+      description, sku: `EMS-${slug.toUpperCase().slice(0, 18)}`, keywords: productTags.join(", "),
+      brand: { "@type": "Brand", name: "Emir Spor" }, category: "Futbol Formaları",
+      color: product.colors, material: "Sublimasyon baskıya uygun polyester spor kumaşı",
+      additionalProperty: [
+        { "@type": "PropertyValue", name: "Kişiselleştirme", value: "İsim, numara, takım arması ve sponsor baskısı" },
+        { "@type": "PropertyValue", name: "Üretim", value: "Takıma özel" },
+      ],
+      offers: { "@type": "Offer", url: productUrl, priceCurrency: "TRY", price: "450", availability: "https://schema.org/InStock", itemCondition: "https://schema.org/NewCondition", seller: { "@type": "Organization", name: "Emir Spor" } },
+    },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: baseUrl },
+      { "@type": "ListItem", position: 2, name: "Futbol Formaları", item: `${baseUrl}/kategori/futbol-formalari` },
+      { "@type": "ListItem", position: 3, name: product.name, item: productUrl },
+    ] },
+    { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
+  ];
 
   return <>
-    <Script id={`product-schema-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+    <Script id={`product-schema-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
     <SiteHeader />
     <main className={styles.page}>
       <nav className={`${styles.breadcrumb} container-wide`} aria-label="Sayfa yolu">
@@ -54,11 +73,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <section className={`${styles.productHero} container-wide`}>
         <div className={styles.gallery} aria-label={`${product.name} ürün görseli`}>
           <figure className={`${styles.productPhoto} ${styles.mainPhoto}`}>
-            <Image src={product.image} alt={`${product.name} forma, şort ve çorap takımı`} title={`${product.name} ürün görseli`} fill priority sizes="(max-width: 900px) 100vw, 55vw" />
+            <Image src={product.image} alt={`${product.name}; ${product.colors} forma, şort ve çorap takımı`} title={`${product.name} halısaha forması tasarla modeli`} fill priority sizes="(max-width: 900px) 100vw, 55vw" />
+            <figcaption className={styles.imageCaption}>{product.name} — takımınıza özel isim, numara, logo ve sponsor baskılı halısaha forması.</figcaption>
           </figure>
         </div>
         <div className={styles.summary}>
-          <p className={styles.eyebrow}>TAKIMA ÖZEL FUTBOL FORMASI</p><h1>{product.name}</h1>
+          <p className={styles.eyebrow}>HALISAHA FORMASI TASARLA</p><h1>{product.name}</h1>
           <div className={styles.price}>{product.price} TL <small>/ ADET</small></div>
           <p className={styles.shortDescription}>{description} Tasarım takım renklerinize göre düzenlenebilir ve üretimden önce onayınıza sunulur.</p>
           <a className={styles.whatsappButton} href={whatsappUrl} target="_blank" rel="noopener noreferrer" title={`${product.name} siparişi için WhatsApp'tan yazın`}>
@@ -67,6 +87,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </a>
           <p className={styles.orderNote}>Takım adedi, beden listesi, baskılar ve teslim tarihi sipariş öncesinde netleştirilir.</p>
           <dl className={styles.meta}><div><dt>Fiyat</dt><dd>450 TL</dd></div><div><dt>Kategori</dt><dd>Futbol Formaları</dd></div><div><dt>Üretim</dt><dd>Takıma özel</dd></div></dl>
+          <div className={styles.productTags} aria-label="Ürün etiketleri"><strong>Etiketler</strong><div>{productTags.slice(0, 5).map((tag) => <Link href={tag === "forma yaptırma" ? "/forma-tasarla/takim-formasi-tasarla" : tag === "futbol forması" ? "/kategori/futbol-formalari" : "/forma-tasarla/hali-saha-formasi-tasarla"} key={tag}>{tag}</Link>)}</div></div>
         </div>
       </section>
 
@@ -82,19 +103,21 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       <section className={styles.productDescription} aria-labelledby="product-description-title"><div className="container-wide">
         <p className={styles.descriptionEyebrow}>DETAYLI ÜRÜN AÇIKLAMASI</p>
-        <h2 id="product-description-title">{product.name} ile Takımına Özel Forma Yaptırma</h2>
+        <h2 id="product-description-title">{product.name} ile Halısaha Forması Tasarla</h2>
         <p className={styles.descriptionLead}>{product.name}, {product.colors} renklerinin dengeli kullanıldığı modern bir halısaha forması seçeneğidir. Amatör futbol takımları, okul ekipleri, şirket turnuvaları ve düzenli maç yapan arkadaş grupları için kişiselleştirilebilir.</p>
         <div className={styles.descriptionColumns}>
-          <article><h3>Halısaha Forması Nasıl Kişiselleştirilir?</h3><p>Her oyuncu için farklı isim, numara ve beden bilgisi uygulanabilir. Takım arması ve sponsor logoları tasarım bütünlüğünü bozmayacak alanlara yerleştirilir.</p><p>Diğer seçenekler için <Link href="/kategori/futbol-formalari">futbol formaları kategorisini</Link> inceleyebilirsiniz.</p></article>
-          <article><h3>Forma Tasarla ve Üretim Onayı</h3><p>Takım renkleri, logolar ve oyuncu listesi paylaşıldıktan sonra dijital çalışma hazırlanır. Yazılı onay alınmadan üretime başlanmaz.</p><p>Sürecin ayrıntıları <Link href="/forma-tasarla/futbol-formasi-tasarla">futbol forması tasarla</Link> rehberinde yer alır.</p></article>
-          <article><h3>Forma Yaptırma Fiyatı</h3><p>Bu modelin ürün fiyatı adet başına 450 TL&apos;dir. Toplam sipariş, ek ürünler ve özel uygulamalar WhatsApp görüşmesinde netleştirilir.</p><p>Bütçe planlaması için <Link href="/forma-tasarla/ucuz-forma-tasarla">ucuz forma tasarla</Link> sayfasını okuyabilirsiniz.</p></article>
-          <article><h3>Kumaş, Baskı ve Bakım</h3><p>Hafif spor kumaşı hareket rahatlığı sağlar. Ürünün ters çevrilerek düşük sıcaklıkta yıkanması ve baskı yüzeyine doğrudan ütü uygulanmaması önerilir.</p><p>Takım siparişi rehberi için <Link href="/forma-tasarla/hali-saha-formasi-tasarla">halısaha forması tasarla</Link> sayfasına göz atın.</p></article>
+          <article><h3>Halısaha Forması Nasıl Kişiselleştirilir?</h3><h4>İsim, numara, arma ve sponsor yerleşimi</h4><p>Her oyuncu için farklı isim, numara ve beden bilgisi uygulanabilir. Takım arması ve sponsor logoları tasarım bütünlüğünü bozmayacak alanlara yerleştirilir.</p><p>Diğer seçenekler için <Link href="/kategori/futbol-formalari">futbol formaları kategorisini</Link> inceleyebilirsiniz.</p></article>
+          <article><h3>Halısaha Forması Tasarla ve Üretim Onayı</h3><h4>Fikirden onaylı dijital tasarıma</h4><p>Takım renkleri, logolar ve oyuncu listesi paylaşıldıktan sonra dijital çalışma hazırlanır. Yazılı onay alınmadan üretime başlanmaz.</p><p>Sürecin ayrıntıları <Link href="/forma-tasarla/futbol-formasi-tasarla">futbol forması tasarla</Link> rehberinde yer alır.</p></article>
+          <article><h3>Forma Yaptırma Fiyatı</h3><h4>450 TL ürün fiyatı ve sipariş planı</h4><p>Bu modelin ürün fiyatı adet başına 450 TL&apos;dir. Toplam sipariş, ek ürünler ve özel uygulamalar WhatsApp görüşmesinde netleştirilir.</p><p>Bütçe planlaması için <Link href="/forma-tasarla/ucuz-forma-tasarla">ucuz forma tasarla</Link> sayfasını okuyabilirsiniz.</p></article>
+          <article><h3>Kumaş, Baskı ve Bakım</h3><h4>Sublimasyon baskılı spor kumaşı</h4><p>Hafif spor kumaşı hareket rahatlığı sağlar. Ürünün ters çevrilerek düşük sıcaklıkta yıkanması ve baskı yüzeyine doğrudan ütü uygulanmaması önerilir.</p><p>Takım siparişi rehberi için <Link href="/forma-tasarla/hali-saha-formasi-tasarla">halısaha forması tasarla</Link> sayfasına göz atın.</p></article>
         </div>
         <div className={styles.descriptionCta}><h3>{product.name} Modelini Takımınıza Uyarlayalım</h3><p>Takım adedi, renkler, beden listesi ve logoları paylaşın; tasarım çalışmasını başlatalım.</p><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">WHATSAPP&apos;TAN BİLGİ AL</a></div>
       </div></section>
 
+      <section className={`${styles.faqSection} container-wide`} aria-labelledby="product-faq-title"><p className={styles.descriptionEyebrow}>SIK SORULAN SORULAR</p><h2 id="product-faq-title">Halısaha Forması Tasarla: Sık Sorulan Sorular</h2><div>{faq.map(([question, answer]) => <article key={question}><h3>{question}</h3><p>{answer}</p></article>)}</div></section>
+
       <section className={`${styles.related} container-wide`}><div className={styles.relatedHeading}><p>BENZER MODELLER</p><h2>Bunları da inceleyin</h2></div>
-        <div className={styles.relatedGrid}>{related.map((item) => <article key={item.slug}><Link href={`/urunler/${item.slug}`}><div><Image src={item.image} alt={item.name} title={item.name} fill sizes="(max-width: 600px) 100vw, 33vw" /></div><h3>{item.name}</h3><span>{item.price} TL</span></Link></article>)}</div>
+        <div className={styles.relatedGrid}>{related.map((item) => <article key={item.slug}><Link href={`/urunler/${item.slug}`} title={`${item.name} ürün sayfasını inceleyin`}><div><Image src={item.image} alt={`${item.name} forma, şort ve çorap seti`} title={`${item.name} halısaha forması`} fill sizes="(max-width: 600px) 100vw, 33vw" /></div><h3>{item.name}</h3><span>{item.price} TL</span></Link></article>)}</div>
       </section>
     </main>
     <CollectionCampaign orderHref={whatsappUrl} /><SiteFooter />

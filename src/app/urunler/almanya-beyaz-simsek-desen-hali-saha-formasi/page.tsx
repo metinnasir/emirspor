@@ -11,8 +11,9 @@ const productImage = "/urunler/almanya-beyaz-simsek-desen-hali-saha-formasi.png"
 const whatsappUrl = "https://wa.me/905444407767?text=Merhaba%2C%20Almanya%20Beyaz%20%C5%9Eim%C5%9Fek%20Desen%20Hal%C4%B1%20Saha%20Formas%C4%B1%20hakk%C4%B1nda%20sipari%C5%9F%20vermek%20istiyorum";
 
 export const metadata: Metadata = {
-  title: "Almanya Beyaz Şimşek Desen Halı Saha Forması",
-  description: "Almanya beyaz şimşek desenli halı saha forması; forma, şort, isim, numara, logo ve sponsor baskısı seçenekleriyle takıma özel üretilir.",
+  title: "Almanya Beyaz Şimşek Desen | Halısaha Forması Tasarla",
+  description: "Almanya beyaz şimşek desen modeliyle halısaha forması tasarla. İsim, numara, logo ve sponsor baskılı forma yaptırma fiyatı 450 TL.",
+  keywords: ["Almanya beyaz şimşek desen forma", "halısaha forması tasarla", "forma yaptırma", "forma tasarla", "futbol forması"],
   alternates: { canonical: "/urunler/almanya-beyaz-simsek-desen-hali-saha-formasi" },
   openGraph: {
     type: "website",
@@ -29,15 +30,25 @@ const relatedProducts = [
   { name: "Kırmızı Lacivert Maç Forması", image: "/urunler/slider/hali-saha-formasi-slide-model-3.png" },
 ];
 
+const productTags = ["halısaha forması tasarla", "forma yaptırma", "futbol forması", "beyaz şimşek desen forma", "takım forması"];
+const faq = [
+  ["Almanya şimşek desen forma renkleri değiştirilebilir mi?", "Evet. Modelin ana ve yardımcı renkleri takım kimliğinize göre yeniden düzenlenebilir."],
+  ["İsim, numara ve logo baskısı yapılır mı?", "Evet. Her oyuncuya özel isim, numara, takım arması ve sponsor logoları uygulanabilir."],
+  ["Üretimden önce tasarım onayı alınır mı?", "Evet. Dijital çalışma ve oyuncu listesi onaylandıktan sonra üretime başlanır."],
+];
+
 export default function ProductPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: productName,
-    image: [`https://emirspor.com${productImage}`],
+    image: [{ "@type": "ImageObject", url: `https://emirspor.com${productImage}`, width: 1369, height: 1542, caption: `${productName} forma, şort ve çorap seti` }],
     description: "Takıma özel üretilen Almanya beyaz şimşek desen halı saha forması. İsim, numara, arma ve sponsor baskıları uygulanabilir.",
     sku: "EMS-ALM-001",
     brand: { "@type": "Brand", name: "Emir Spor" },
+    category: "Futbol Formaları",
+    keywords: productTags.join(", "),
+    color: "Beyaz, siyah, kırmızı ve sarı",
     offers: {
       "@type": "Offer",
       url: productUrl,
@@ -47,9 +58,18 @@ export default function ProductPage() {
       itemCondition: "https://schema.org/NewCondition",
     },
   };
+  const structuredData = [schema, {
+    "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: "https://emirspor.com" },
+      { "@type": "ListItem", position: 2, name: "Futbol Formaları", item: "https://emirspor.com/kategori/futbol-formalari" },
+      { "@type": "ListItem", position: 3, name: productName, item: productUrl },
+    ],
+  }, {
+    "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })),
+  }];
 
   return <>
-    <Script id="product-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+    <Script id="product-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
 
     <SiteHeader />
 
@@ -61,12 +81,13 @@ export default function ProductPage() {
       <section className={`${styles.productHero} container-wide`}>
         <div className={styles.gallery} aria-label="Ürün görselleri">
           <figure className={`${styles.productPhoto} ${styles.mainPhoto}`}>
-            <Image src={productImage} alt={`${productName} forma, şort ve çorap takımı`} fill priority sizes="(max-width: 900px) 100vw, 55vw" />
+            <Image src={productImage} alt={`${productName}; beyaz, siyah, kırmızı ve sarı forma, şort ve çorap takımı`} title={`${productName} halısaha forması tasarla modeli`} fill priority sizes="(max-width: 900px) 100vw, 55vw" />
+            <figcaption className={styles.imageCaption}>{productName} — isim, numara, logo ve sponsor baskılı halısaha forması.</figcaption>
           </figure>
         </div>
 
         <div className={styles.summary}>
-          <p className={styles.eyebrow}>TAKIMA ÖZEL HALI SAHA FORMASI</p>
+          <p className={styles.eyebrow}>HALISAHA FORMASI TASARLA</p>
           <h1>{productName}</h1>
           <div className={styles.price}>450 TL <small>/ ADET</small></div>
           <p className={styles.shortDescription}>Beyaz zemin üzerine siyah, kırmızı ve sarı şimşek detaylarıyla tasarlanan bu model; takımınıza özel isim, numara, logo ve sponsor baskılarıyla üretilir.</p>
@@ -82,6 +103,7 @@ export default function ProductPage() {
             <div><dt>Kategori</dt><dd>Halı Saha Forması</dd></div>
             <div><dt>Üretim</dt><dd>Takıma özel</dd></div>
           </dl>
+          <div className={styles.productTags} aria-label="Ürün etiketleri"><strong>Etiketler</strong><div>{productTags.map((tag) => <Link href={tag === "futbol forması" ? "/kategori/futbol-formalari" : tag === "forma yaptırma" ? "/forma-tasarla/takim-formasi-tasarla" : "/forma-tasarla/hali-saha-formasi-tasarla"} key={tag}>{tag}</Link>)}</div></div>
         </div>
       </section>
 
@@ -101,30 +123,34 @@ export default function ProductPage() {
       <section className={styles.productDescription} aria-labelledby="product-description-title">
         <div className="container-wide">
           <p className={styles.descriptionEyebrow}>DETAYLI ÜRÜN AÇIKLAMASI</p>
-          <h2 id="product-description-title">Almanya Şimşek Desenli Halı Saha Forması Yaptırma</h2>
+          <h2 id="product-description-title">Almanya Şimşek Desenli Halısaha Forması Tasarla</h2>
           <p className={styles.descriptionLead}>Takımınızın sahada tek bir kimlikle görünmesini sağlayan Almanya beyaz şimşek desenli halı saha forması; modern çizgileri, kişiselleştirilebilir baskıları ve maç boyunca konfor sunan kumaş yapısıyla takım siparişleri için hazırlanır.</p>
 
           <div className={styles.descriptionColumns}>
             <article>
               <h3>Takımınıza Özel Halı Saha Forması</h3>
+              <h4>İsim, numara, arma ve sponsor seçenekleri</h4>
               <p>Bu model beyaz zemin üzerine siyah, kırmızı ve sarı geçişlerle oluşturulan dinamik bir tasarıma sahiptir. Amatör futbol takımları, arkadaş grupları, okul ekipleri, şirket turnuvaları ve düzenli maç yapan kulüpler için üretilebilir. Hazır bir modeli doğrudan kullanabilir veya renkleri takım kimliğinize göre değiştirebilirsiniz.</p>
               <p>Profesyonel görünümlü bir <Link href="/forma-tasarla/hali-saha-formasi-tasarla">halı saha forması</Link> için takım arması, oyuncu ismi, forma numarası ve sponsor logoları tasarım üzerinde dengeli biçimde konumlandırılır. Böylece bütün oyuncular aynı görsel dili taşırken her forma kişiye özel bilgilerle hazırlanır.</p>
             </article>
 
             <article>
               <h3>Forma Yaptırma Süreci Nasıl İlerler?</h3>
+              <h4>Dijital tasarımdan onaylı üretime</h4>
               <p><Link href="/forma-tasarla/takim-formasi-tasarla">Forma yaptırma</Link> süreci takım adedi, renk tercihleri, beden listesi, logo dosyaları ve teslim tarihi bilgilerinin paylaşılmasıyla başlar. Bu bilgiler doğrultusunda dijital ön çalışma hazırlanır ve üretime geçilmeden önce takım yetkilisinin onayına sunulur.</p>
               <p>Onaylanan tasarım oyuncu bedenlerine göre üretim planına alınır. Baskı, dikim ve kalite kontrol aşamalarının ardından formalar teslimata hazırlanır. İsim ve numaraların doğru eşleşmesi için sipariş listesinin üretim öncesinde kontrol edilmesi önemlidir.</p>
             </article>
 
             <article>
               <h3>Forma Tasarla: Renk, Logo ve Baskı Seçenekleri</h3>
+              <h4>Takım kimliğine uygun görsel planlama</h4>
               <p>Kendi takımınız için <Link href="/forma-tasarla/futbol-formasi-tasarla">forma tasarla</Link> seçeneğini kullanırken ana renk, yardımcı renk, desen yoğunluğu, yaka biçimi ve kol detayları değiştirilebilir. Takım logosunun yanında lig, turnuva veya sponsor logoları da tasarıma eklenebilir.</p>
               <p>Sublimasyon baskı tekniğinde renk ve desen kumaşın yapısına işlendiği için baskı yüzeyde ağırlık oluşturmaz. Bu yöntem özellikle çok renkli, degrade geçişli ve şimşek desenli futbol formalarında daha özgür bir tasarım alanı sağlar.</p>
             </article>
 
             <article>
               <h3>Konforlu Kumaş ve Uzun Ömürlü Kullanım</h3>
+              <h4>Sublimasyon baskılı spor kumaşı</h4>
               <p>Hafif polyester spor kumaşı hareket sırasında vücudun rahat kalmasına yardımcı olur. Nefes alan doku ve hızlı kuruma özelliği, yoğun maç temposunda formanın ağırlaşmasını azaltır. Kumaş seçimi çocuk ve yetişkin takımları için kullanım ihtiyacına göre planlanabilir.</p>
               <p>Formaların kullanım ömrünü korumak için düşük sıcaklıkta, ters çevrilerek yıkanması ve doğrudan yüksek ısı uygulanmaması önerilir. Bütçe odaklı alternatifler için <Link href="/forma-tasarla/ucuz-forma-tasarla">ucuz forma tasarla</Link> sayfamızı da inceleyebilirsiniz.</p>
             </article>
@@ -138,11 +164,13 @@ export default function ProductPage() {
         </div>
       </section>
 
+      <section className={`${styles.faqSection} container-wide`} aria-labelledby="product-faq-title"><p className={styles.descriptionEyebrow}>SIK SORULAN SORULAR</p><h2 id="product-faq-title">Halısaha Forması Tasarla: Sık Sorulan Sorular</h2><div>{faq.map(([question, answer]) => <article key={question}><h3>{question}</h3><p>{answer}</p></article>)}</div></section>
+
       <section className={`${styles.related} container-wide`}>
         <div className={styles.relatedHeading}><p>BENZER MODELLER</p><h2>Bunları da inceleyin</h2></div>
         <div className={styles.relatedGrid}>
           {relatedProducts.map((product) => <article key={product.name}>
-            <div><Image src={product.image} alt={product.name} fill sizes="(max-width: 600px) 100vw, 33vw" /></div>
+            <div><Image src={product.image} alt={`${product.name} halısaha forması modeli`} title={product.name} fill sizes="(max-width: 600px) 100vw, 33vw" /></div>
             <h3>{product.name}</h3><span>450 TL</span>
           </article>)}
         </div>
